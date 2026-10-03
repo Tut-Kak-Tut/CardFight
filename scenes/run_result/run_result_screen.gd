@@ -1,0 +1,57 @@
+extends Control
+
+const ART := "res://assets/art/placeholder/"
+const GOLD := Color("#c9a24b")
+
+
+func _ready() -> void:
+	set_anchors_preset(Control.PRESET_FULL_RECT)
+	RunState.ensure_run()
+	var run: Run = RunState.run
+	var bg := TextureRect.new()
+	bg.texture = load(ART + "bg_combat.svg")
+	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	bg.stretch_mode = TextureRect.STRETCH_SCALE
+	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(bg)
+	var dim := ColorRect.new()
+	dim.color = Color(0, 0, 0, 0.6)
+	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
+	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(dim)
+
+	var won: bool = run.result == "victory"
+	_label("Victory" if won else "Defeat", 88, 400, 120, Color("#c9a24b") if won else Color("#a8322d"))
+	var lines: Array[String] = ["Floors cleared: %d" % run.stats.layers,
+		"Battles won: %d" % run.stats.battles, "Elites defeated: %d" % run.stats.elites]
+	if run.stats.boss:
+		lines.append("Boss defeated")
+	for i in lines.size():
+		_label(lines[i], 32, 600 + i * 60, 50, Color.WHITE)
+	_label("Soul Shards earned: %d" % run.soul_shards(), 40, 1000, 60, GOLD)
+
+	var b := Button.new()
+	b.text = "Continue"
+	b.add_theme_font_size_override("font_size", 44)
+	b.position = Vector2(340, 1600)
+	b.size = Vector2(400, 120)
+	b.pressed.connect(_on_continue)
+	add_child(b)
+
+
+func _label(txt: String, size_px: int, y: float, h: float, color: Color) -> void:
+	var lb := Label.new()
+	lb.text = txt
+	lb.add_theme_font_size_override("font_size", size_px)
+	lb.add_theme_color_override("font_color", color)
+	lb.position = Vector2(0, y)
+	lb.size = Vector2(1080, h)
+	lb.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lb.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	add_child(lb)
+
+
+func _on_continue() -> void:
+	RunState.new_run(RunState.run.character_id)
+	SceneRouter.goto("map")
