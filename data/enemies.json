@@ -3,7 +3,7 @@
     {
       "id": "skeleton_warrior",
       "name": "Skeleton Warrior",
-      "max_hp": 24,
+      "max_hp": 30,
       "tier": "normal",
       "phases": [
         {
@@ -44,7 +44,7 @@
     {
       "id": "skeleton_archer",
       "name": "Skeleton Archer",
-      "max_hp": 18,
+      "max_hp": 22,
       "tier": "normal",
       "phases": [
         {
@@ -54,7 +54,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 5,
+                  "value": 6,
                   "target": "player"
                 }
               ]
@@ -64,7 +64,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 9,
+                  "value": 10,
                   "target": "player"
                 }
               ]
@@ -130,7 +130,7 @@
     {
       "id": "dark_cultist",
       "name": "Dark Cultist",
-      "max_hp": 20,
+      "max_hp": 26,
       "tier": "normal",
       "phases": [
         {
@@ -141,7 +141,7 @@
                 {
                   "op": "apply",
                   "status": "strength",
-                  "value": 3,
+                  "value": 4,
                   "target": "self"
                 }
               ]
@@ -214,7 +214,7 @@
     {
       "id": "bone_golem",
       "name": "Bone Golem",
-      "max_hp": 70,
+      "max_hp": 92,
       "tier": "elite",
       "phases": [
         {
@@ -260,7 +260,7 @@
                 {
                   "op": "apply",
                   "status": "strength",
-                  "value": 2,
+                  "value": 3,
                   "target": "self"
                 }
               ]

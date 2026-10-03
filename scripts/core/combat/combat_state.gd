@@ -114,27 +114,34 @@ func choose_discard(hand_index: int) -> bool:
 func end_player_turn() -> void:
 	if result != "":
 		return
-	discard_pile.append_array(hand)
-	hand.clear()
-	pending_discard = 0
-	_end_of_turn_statuses(player)
-	_enemy_phase()
+	begin_enemy_phase()
+	for i in enemies.size():
+		enemy_act(i)
+	finish_enemy_phase()
 
 func start_combat() -> void:
 	start_player_turn()
 
-func _enemy_phase() -> void:
-	for e in enemies:
-		if e.is_dead() or result != "":
-			continue
-		if e.get_status("bastion") <= 0:
-			e.block = 0
-		_tick_poison(e)
-		if not e.is_dead():
-			EffectResolver.resolve(e.intent.get("effects", []), e, player, self)
-		_end_of_turn_statuses(e)
-		EnemyAI.advance(e)
-		_check_end()
+func begin_enemy_phase() -> void:
+	discard_pile.append_array(hand)
+	hand.clear()
+	pending_discard = 0
+	_end_of_turn_statuses(player)
+
+func enemy_act(i: int) -> void:
+	var e := enemies[i]
+	if e.is_dead() or result != "":
+		return
+	if e.get_status("bastion") <= 0:
+		e.block = 0
+	_tick_poison(e)
+	if not e.is_dead():
+		EffectResolver.resolve(e.intent.get("effects", []), e, player, self)
+	_end_of_turn_statuses(e)
+	EnemyAI.advance(e)
+	_check_end()
+
+func finish_enemy_phase() -> void:
 	if result == "":
 		start_player_turn()
 
@@ -150,6 +157,8 @@ func _tick_poison(c: Combatant) -> void:
 		c.add_status("poison", -1)
 		if c.is_dead():
 			event.emit("death", {"target": c})
+		elif not c.is_player and EnemyAI.check_phase(c, self):
+			event.emit("phase", {"target": c})
 
 func alive_enemies() -> Array[Combatant]:
 	var res: Array[Combatant] = []

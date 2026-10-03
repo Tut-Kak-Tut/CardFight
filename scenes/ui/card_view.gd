@@ -52,13 +52,14 @@ func _ready() -> void:
 	_name.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
 	_type = _make_label(18, Color(0.7, 0.7, 0.7), false)
-	_type.position = Vector2(0, 120)
+	_type.position = Vector2(0, 108)
 	_type.size = Vector2(240, 28)
 	_type.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
-	_text = _make_label(20, Color.WHITE, false)
-	_text.position = Vector2(16, 200)
-	_text.size = Vector2(208, 120)
+	_text = _make_label(26, Color.WHITE, false)
+	_text.position = Vector2(16, 130)
+	_text.size = Vector2(208, 195)
+	_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
@@ -102,6 +103,11 @@ func set_card(c: Dictionary) -> void:
 	_name.add_theme_color_override("font_color", Color("#7ed957") if up else Color.WHITE)
 	_type.text = type_str.capitalize()
 	_text.text = str(c.get("text", ""))
+	_text.add_theme_font_size_override("font_size", 26)
+	var font := _text.get_theme_font("font")
+	var lines := font.get_multiline_string_size(_text.text, HORIZONTAL_ALIGNMENT_LEFT, 208, 26).y / font.get_height(26)
+	if lines > 3.01:
+		_text.add_theme_font_size_override("font_size", 22)
 
 
 func set_playable(ok: bool) -> void:

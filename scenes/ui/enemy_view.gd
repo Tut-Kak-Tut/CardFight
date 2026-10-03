@@ -64,7 +64,7 @@ func _ready() -> void:
 	sprite_holder.add_child(_fallback)
 
 	_name = Label.new()
-	_name.add_theme_font_size_override("font_size", 20)
+	_name.add_theme_font_size_override("font_size", 26)
 	_name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_name.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	vb.add_child(_name)
@@ -73,7 +73,7 @@ func _ready() -> void:
 	hp_holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	vb.add_child(hp_holder)
 	_hp_bar = ProgressBar.new()
-	_hp_bar.custom_minimum_size = Vector2(260, 24)
+	_hp_bar.custom_minimum_size = Vector2(260, 34)
 	_hp_bar.show_percentage = false
 	_hp_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var fill := StyleBoxFlat.new()
@@ -84,7 +84,7 @@ func _ready() -> void:
 	_hp_label.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_hp_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_hp_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	_hp_label.add_theme_font_size_override("font_size", 18)
+	_hp_label.add_theme_font_size_override("font_size", 28)
 	_hp_label.add_theme_color_override("font_outline_color", Color.BLACK)
 	_hp_label.add_theme_constant_override("outline_size", 4)
 	_hp_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -174,10 +174,20 @@ func refresh(preview: Dictionary) -> void:
 	_intent_icon.texture = load(ART + icon + ".svg") if icon != "" else null
 	var dmg := int(preview.get("damage", -1))
 	var times := int(preview.get("times", 1))
-	if dmg >= 0:
-		_intent_label.text = ("%dx%d" % [dmg, times]) if times > 1 else str(dmg)
-	else:
-		_intent_label.text = ""
+	var dtxt := ("%dx%d" % [dmg, times]) if times > 1 else str(dmg)
+	match kind:
+		"attack", "attack_debuff":
+			_intent_label.text = dtxt if dmg >= 0 else ""
+		"attack_defend":
+			_intent_label.text = "%s / %d" % [dtxt if dmg >= 0 else "0", int(preview.get("block", 0))]
+		"defend":
+			_intent_label.text = str(int(preview.get("block", 0)))
+		"buff":
+			_intent_label.text = "+%d" % int(preview.get("buff", 0))
+		"debuff":
+			_intent_label.text = str(int(preview.get("debuff", 0)))
+		_:
+			_intent_label.text = dtxt if dmg >= 0 else ""
 
 
 func set_targetable(on: bool) -> void:

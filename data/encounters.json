@@ -30,8 +30,7 @@
     ],
     [
       "skeleton_warrior",
-      "skeleton_warrior",
-      "skeleton_archer"
+      "dark_cultist"
     ],
     [
       "ghoul",
@@ -47,6 +46,10 @@
     ],
     [
       "skeleton_warrior",
+      "wraith"
+    ],
+    [
+      "skeleton_archer",
       "dark_cultist",
       "skeleton_archer"
     ]
@@ -54,10 +57,6 @@
   "elite": [
     [
       "bone_golem"
-    ],
-    [
-      "bone_golem",
-      "skeleton_archer"
     ]
   ],
   "boss": [

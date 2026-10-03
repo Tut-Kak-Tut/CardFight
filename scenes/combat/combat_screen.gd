@@ -28,6 +28,7 @@ var end_btn: Button
 var banner: Control
 var result_overlay: Control
 var result_label: Label
+var rb: Button
 var zoom_overlay: Control
 
 
@@ -146,7 +147,8 @@ func _build_ui() -> void:
 	circle.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(circle)
 	circle.add_child(_icon(ART + "icon_energy.svg", Vector2.ZERO, Vector2(120, 120)))
-	energy_label = _label("", 40, Vector2.ZERO, Vector2(120, 120))
+	energy_label = _label("", 48, Vector2.ZERO, Vector2(120, 120))
+	energy_label.add_theme_constant_override("outline_size", 8)
 	energy_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	energy_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	circle.add_child(energy_label)
@@ -159,7 +161,15 @@ func _build_ui() -> void:
 
 	end_btn = Button.new()
 	end_btn.text = "End Turn"
-	end_btn.add_theme_font_size_override("font_size", 32)
+	end_btn.add_theme_font_size_override("font_size", 34)
+	for st in ["normal", "hover", "pressed", "disabled"]:
+		var sbx := StyleBoxFlat.new()
+		sbx.bg_color = Color("#555555") if st == "disabled" else Color("#a8322d")
+		sbx.set_border_width_all(3)
+		sbx.border_color = Color("#e8e2d0")
+		end_btn.add_theme_stylebox_override(st, sbx)
+	for cn in ["font_color", "font_hover_color", "font_pressed_color", "font_disabled_color", "font_focus_color"]:
+		end_btn.add_theme_color_override(cn, Color.WHITE)
 	end_btn.position = Vector2(800, 1230)
 	end_btn.size = Vector2(240, 110)
 	end_btn.pressed.connect(_on_end_turn)
@@ -200,13 +210,13 @@ func _build_ui() -> void:
 	result_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	result_overlay.visible = false
 	add_child(result_overlay)
-	result_label = _label("", 72, Vector2(0, 700), Vector2(1080, 120))
+	result_label = _label("", 72, Vector2(0, 600), Vector2(1080, 120))
 	result_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	result_overlay.add_child(result_label)
-	var rb := Button.new()
+	rb = Button.new()
 	rb.text = "Restart"
 	rb.add_theme_font_size_override("font_size", 40)
-	rb.position = Vector2(390, 900)
+	rb.position = Vector2(390, 1300)
 	rb.size = Vector2(300, 120)
 	rb.pressed.connect(func(): get_tree().reload_current_scene())
 	result_overlay.add_child(rb)
@@ -243,6 +253,7 @@ func refresh() -> void:
 	block_label.text = str(p.block)
 	player_status.set_statuses(p.statuses)
 	energy_label.text = "%d/%d" % [state.energy, state.max_energy]
+	energy_label.add_theme_color_override("font_color", Color("#ff6b6b") if state.energy <= 0 else Color.WHITE)
 	draw_label.text = "Draw %d" % state.draw_pile.size()
 	discard_label.text = "Discard %d" % state.discard_pile.size()
 	for i in enemy_views.size():
@@ -251,6 +262,7 @@ func refresh() -> void:
 	banner.visible = state.pending_discard > 0
 	if state.result != "":
 		result_label.text = "Victory" if state.result == "win" else "Defeat"
+		rb.text = "Continue" if state.result == "win" else "Restart"
 		result_overlay.visible = true
 
 
@@ -429,8 +441,20 @@ func _on_end_turn() -> void:
 	input_locked = true
 	end_btn.disabled = true
 	selected_uid = -1
-	state.end_player_turn()
-	await get_tree().create_timer(0.4).timeout
+	state.begin_enemy_phase()
+	refresh()
+	for i in state.enemies.size():
+		if state.enemies[i].is_dead() or state.result != "":
+			continue
+		state.enemy_act(i)
+		refresh()
+		var ev := enemy_views[i]
+		var y0 := ev.position.y
+		var tw := create_tween()
+		tw.tween_property(ev, "position:y", y0 + 30.0, 0.1)
+		tw.tween_property(ev, "position:y", y0, 0.1)
+		await get_tree().create_timer(0.45).timeout
+	state.finish_enemy_phase()
 	refresh()
 	end_btn.disabled = false
 	input_locked = false

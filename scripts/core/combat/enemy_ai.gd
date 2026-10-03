@@ -38,6 +38,8 @@ static func preview(e: Combatant, state: CombatState) -> Dictionary:
 	var dmg := -1
 	var times := 1
 	var block := 0
+	var buff := 0
+	var debuff := 0
 	for fx in e.intent.get("effects", []):
 		match fx.get("op", ""):
 			"damage":
@@ -46,4 +48,4 @@ static func preview(e: Combatant, state: CombatState) -> Dictionary:
 					times = int(fx.get("times", 1))
 			"block":
 				block += int(fx.get("value", 0))
-	return {"intent": e.intent.get("intent", ""), "damage": dmg, "times": times, "block": block}
+	return {"intent": e.intent.get("intent", ""), "damage": dmg, "times": times, "block": block, "buff": buff, "debuff": debuff}
