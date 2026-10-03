@@ -4,21 +4,22 @@
 ;
 ; Format:
 ;   [section] ; section goes between []
-;   name=value ; assign values
-;   name=value ; assign values
+;   param=value ; assign values to parameters
 
 config_version=5
 
 [application]
 
 config/name="CardFight"
-config/features=PackedStringArray("4.7", "Mobile")
 run/main_scene="res://scenes/combat/combat_screen.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://scripts/autoload/game_data.gd"
+RunState="*res://scripts/autoload/run_state.gd"
+SceneRouter="*res://scripts/autoload/scene_router.gd"
 
 [display]
 

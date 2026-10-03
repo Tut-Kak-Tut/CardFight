@@ -12,6 +12,7 @@ var enemy_views: Array[EnemyView] = []
 var card_views: Array[CardView] = []
 var selected_uid := -1
 var input_locked := false
+var in_run := false
 var dragging: CardView = null
 
 var hand_layer: Control
@@ -35,7 +36,13 @@ var zoom_overlay: Control
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	_build_ui()
-	if encounter.is_empty():
+	in_run = RunState.run != null and not RunState.pending.is_empty()
+	var seed_value := randi()
+	if in_run:
+		character_id = RunState.run.character_id
+		encounter = RunState.pending.enemies
+		seed_value = RunState.run.rng.randi()
+	elif encounter.is_empty():
 		var pool: Array = GameData.encounters.get("normal_late", [])
 		encounter = pool[randi() % pool.size()]
 	var ch := GameData.get_character(character_id)
@@ -46,16 +53,23 @@ func _ready() -> void:
 	player.hp = player.max_hp
 	player.is_player = true
 	var deck: Array = []
-	for id in ch.get("deck", []):
-		deck.append(GameData.get_card(str(id)))
+	if in_run:
+		player.max_hp = RunState.run.max_hp
+		player.hp = RunState.run.hp
+		deck = RunState.run.deck_cards()
+	else:
+		for id in ch.get("deck", []):
+			deck.append(GameData.get_card(str(id)))
 	var foes: Array = []
 	for id in encounter:
 		foes.append(EnemyAI.create(GameData.get_enemy(str(id))))
 	state = CombatState.new()
-	state.setup(player, deck, foes, GameData.balance, randi())
+	state.setup(player, deck, foes, GameData.balance, seed_value)
 	state.event.connect(_on_event)
 	_build_enemies()
 	state.start_combat()
+	if in_run:
+		EffectResolver.resolve(RunState.run.relic_effects("combat_start"), state.player, null, state)
 	refresh()
 
 
@@ -218,8 +232,17 @@ func _build_ui() -> void:
 	rb.add_theme_font_size_override("font_size", 40)
 	rb.position = Vector2(390, 1300)
 	rb.size = Vector2(300, 120)
-	rb.pressed.connect(func(): get_tree().reload_current_scene())
+	rb.pressed.connect(_on_result_pressed)
 	result_overlay.add_child(rb)
+
+
+func _on_result_pressed() -> void:
+	if not in_run:
+		get_tree().reload_current_scene()
+	elif state.result == "win":
+		RunState.combat_won(state.player.hp)
+	else:
+		RunState.combat_lost()
 
 
 func _build_enemies() -> void:

@@ -58,6 +58,7 @@
     "boss": 30
   },
   "map": {
+    "max_battle_share": 0.58,
     "layers": 10,
     "min_nodes": 2,
     "max_nodes": 3,

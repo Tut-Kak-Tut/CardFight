@@ -79,8 +79,20 @@ GODOT="C:/Users/Vova/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEn
 → tester (бій) → balancer (числа бою)
 
 ### Етап 2 — Забіг
-Мапа (генератор + екран), Rewards, Merchant, Rest/Upgrade, реліквії, Elite/Boss, Run Result, RunState, Deck overlay.
-→ tester → balancer (економіка, складність)
+Мета: з F5 починається забіг Knight: мапа → бої/еліта/торговець/вогнище → нагороди → бос → Run Result → новий забіг.
+Хвиля A (паралельно):
+- T-009 MapGenerator + тести (sonnet)
+- T-010 Run — стан забігу (колода, HP, gold, реліквії, мапа, shards) + тести (sonnet)
+- T-011 RewardGenerator + ShopGenerator + тести (sonnet)
+- T-012 UI: DeckOverlay, RelicBar, TopBar (sonnet)
+- D-002 Арт: іконки вузлів, реліквій, золота, фони мапи/вогнища/торговця (designer)
+Хвиля B:
+- T-013 RunState + SceneRouter autoload, інтеграція бою із забігом (sonnet) ← T-009..T-011
+Хвиля C (паралельно) ← T-012, T-013, D-002:
+- T-014 Екран мапи (sonnet)
+- T-015 Екрани Rewards і Run Result (sonnet)
+- T-016 Екрани Merchant і Rest (sonnet)
+→ tester (+ симуляція повного забігу) → balancer (бос, економіка)
 
 ### Етап 3 — Мета і оболонка
 Main Menu, Character Select, Sanctuary + MetaState, SaveManager (автозбереження), Pause/Settings, звук-заглушки.
