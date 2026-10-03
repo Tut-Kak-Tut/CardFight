@@ -1,0 +1,90 @@
+{
+  "relics": [
+    {
+      "id": "knights_heart",
+      "name": "Knight's Heart",
+      "text": "Gain 10 Max HP.",
+      "hooks": {
+        "on_pickup": [
+          {
+            "op": "max_hp",
+            "value": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "energy_crystal",
+      "name": "Energy Crystal",
+      "text": "Gain 1 Energy on the first turn of each combat.",
+      "hooks": {
+        "combat_start": [
+          {
+            "op": "energy",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "old_shield",
+      "name": "Old Shield",
+      "text": "Start each combat with 4 Block.",
+      "hooks": {
+        "combat_start": [
+          {
+            "op": "block",
+            "value": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "gold_pouch",
+      "name": "Gold Pouch",
+      "text": "Gain 30 Gold now. Plus 5 Gold after each combat.",
+      "hooks": {
+        "on_pickup": [
+          {
+            "op": "gold",
+            "value": 30
+          }
+        ],
+        "combat_end": [
+          {
+            "op": "gold",
+            "value": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "healing_flask",
+      "name": "Healing Flask",
+      "text": "Heal 6 HP after each combat.",
+      "hooks": {
+        "combat_end": [
+          {
+            "op": "heal",
+            "value": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "demon_skull",
+      "name": "Demon Skull",
+      "text": "Start each combat with 1 Strength.",
+      "hooks": {
+        "combat_start": [
+          {
+            "op": "apply",
+            "status": "strength",
+            "value": 1,
+            "target": "self"
+          }
+        ]
+      }
+    }
+  ]
+}

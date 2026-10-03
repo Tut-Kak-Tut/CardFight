@@ -1,0 +1,44 @@
+{
+  "characters": [
+    {
+      "id": "knight",
+      "name": "Knight",
+      "max_hp": 80,
+      "energy": 3,
+      "description": "Heavy armor and crushing blows.",
+      "deck": [
+        "strike",
+        "strike",
+        "strike",
+        "strike",
+        "strike",
+        "defend",
+        "defend",
+        "defend",
+        "defend",
+        "battle_cry"
+      ],
+      "unlock_cost": 0
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "max_hp": 60,
+      "energy": 3,
+      "description": "Fire, poison and arcane tricks.",
+      "deck": [
+        "spark",
+        "spark",
+        "spark",
+        "spark",
+        "barrier",
+        "barrier",
+        "barrier",
+        "barrier",
+        "poison_cloud",
+        "focus"
+      ],
+      "unlock_cost": 150
+    }
+  ]
+}

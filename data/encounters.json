@@ -1,0 +1,68 @@
+{
+  "early_max_layer": 3,
+  "normal_early": [
+    [
+      "skeleton_warrior"
+    ],
+    [
+      "skeleton_archer"
+    ],
+    [
+      "dark_cultist"
+    ],
+    [
+      "skeleton_warrior",
+      "skeleton_archer"
+    ],
+    [
+      "dark_cultist",
+      "skeleton_archer"
+    ]
+  ],
+  "normal_late": [
+    [
+      "ghoul",
+      "skeleton_archer"
+    ],
+    [
+      "wraith",
+      "dark_cultist"
+    ],
+    [
+      "skeleton_warrior",
+      "skeleton_warrior",
+      "skeleton_archer"
+    ],
+    [
+      "ghoul",
+      "dark_cultist"
+    ],
+    [
+      "wraith",
+      "skeleton_archer"
+    ],
+    [
+      "ghoul",
+      "wraith"
+    ],
+    [
+      "skeleton_warrior",
+      "dark_cultist",
+      "skeleton_archer"
+    ]
+  ],
+  "elite": [
+    [
+      "bone_golem"
+    ],
+    [
+      "bone_golem",
+      "skeleton_archer"
+    ]
+  ],
+  "boss": [
+    [
+      "lich_lord"
+    ]
+  ]
+}

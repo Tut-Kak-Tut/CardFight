@@ -1,0 +1,926 @@
+{
+  "cards": [
+    {
+      "id": "strike",
+      "name": "Strike",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "starter",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 6 damage.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 9 damage.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 9,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "defend",
+      "name": "Defend",
+      "class": "knight",
+      "type": "skill",
+      "rarity": "starter",
+      "cost": 1,
+      "target": "none",
+      "exhaust": false,
+      "text": "Gain 5 Block.",
+      "effects": [
+        {
+          "op": "block",
+          "value": 5
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 8 Block.",
+        "effects": [
+          {
+            "op": "block",
+            "value": 8
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "battle_cry",
+      "name": "Battle Cry",
+      "class": "knight",
+      "type": "skill",
+      "rarity": "starter",
+      "cost": 1,
+      "target": "none",
+      "exhaust": true,
+      "text": "Gain 2 Strength. Exhaust.",
+      "effects": [
+        {
+          "op": "apply",
+          "status": "strength",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "upgraded": {
+        "cost": 0
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "slash",
+      "name": "Slash",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 9 damage. Apply 1 Vulnerable.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 9,
+          "target": "enemy"
+        },
+        {
+          "op": "apply",
+          "status": "vulnerable",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 12 damage. Apply 2 Vulnerable.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 12,
+            "target": "enemy"
+          },
+          {
+            "op": "apply",
+            "status": "vulnerable",
+            "value": 2,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "double_strike",
+      "name": "Double Strike",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 5 damage twice.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 5,
+          "target": "enemy",
+          "times": 2
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 7 damage twice.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 7,
+            "target": "enemy",
+            "times": 2
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "iron_skin",
+      "name": "Iron Skin",
+      "class": "knight",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 2,
+      "target": "none",
+      "exhaust": false,
+      "text": "Gain 12 Block.",
+      "effects": [
+        {
+          "op": "block",
+          "value": 12
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 16 Block.",
+        "effects": [
+          {
+            "op": "block",
+            "value": 16
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "quick_guard",
+      "name": "Quick Guard",
+      "class": "knight",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "target": "none",
+      "exhaust": false,
+      "text": "Gain 4 Block. Draw 1.",
+      "effects": [
+        {
+          "op": "block",
+          "value": 4
+        },
+        {
+          "op": "draw",
+          "value": 1
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 6 Block. Draw 1.",
+        "effects": [
+          {
+            "op": "block",
+            "value": 6
+          },
+          {
+            "op": "draw",
+            "value": 1
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "stun_blow",
+      "name": "Stun Blow",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 14 damage. Apply 2 Weak.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 14,
+          "target": "enemy"
+        },
+        {
+          "op": "apply",
+          "status": "weak",
+          "value": 2,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 18 damage. Apply 3 Weak.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 18,
+            "target": "enemy"
+          },
+          {
+            "op": "apply",
+            "status": "weak",
+            "value": 3,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 50
+    },
+    {
+      "id": "whirlwind",
+      "name": "Whirlwind",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "target": "all_enemies",
+      "exhaust": false,
+      "text": "Deal 8 damage to all enemies.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 8,
+          "target": "all_enemies"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 11 damage to all enemies.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 11,
+            "target": "all_enemies"
+          }
+        ]
+      },
+      "unlock_cost": 60
+    },
+    {
+      "id": "bastion",
+      "name": "Bastion",
+      "class": "knight",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 2,
+      "target": "none",
+      "exhaust": false,
+      "text": "Block is not removed at the start of your turn.",
+      "effects": [
+        {
+          "op": "apply",
+          "status": "bastion",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "upgraded": {
+        "cost": 1
+      },
+      "unlock_cost": 70
+    },
+    {
+      "id": "vengeance",
+      "name": "Vengeance",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 6 damage plus half of your Block.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 6,
+          "target": "enemy",
+          "bonus": "half_block"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 9 damage plus half of your Block.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 9,
+            "target": "enemy",
+            "bonus": "half_block"
+          }
+        ]
+      },
+      "unlock_cost": 50
+    },
+    {
+      "id": "titans_wrath",
+      "name": "Titan's Wrath",
+      "class": "knight",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "target": "enemy",
+      "exhaust": true,
+      "text": "Deal 30 damage. Exhaust.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 30,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 40 damage. Exhaust.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 40,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 120
+    },
+    {
+      "id": "spark",
+      "name": "Spark",
+      "class": "mage",
+      "type": "attack",
+      "rarity": "starter",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 6 damage.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 9 damage.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 9,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "barrier",
+      "name": "Barrier",
+      "class": "mage",
+      "type": "skill",
+      "rarity": "starter",
+      "cost": 1,
+      "target": "none",
+      "exhaust": false,
+      "text": "Gain 5 Block.",
+      "effects": [
+        {
+          "op": "block",
+          "value": 5
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 8 Block.",
+        "effects": [
+          {
+            "op": "block",
+            "value": 8
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "poison_cloud",
+      "name": "Poison Cloud",
+      "class": "mage",
+      "type": "skill",
+      "rarity": "starter",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Apply 4 Poison.",
+      "effects": [
+        {
+          "op": "apply",
+          "status": "poison",
+          "value": 4,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Apply 7 Poison.",
+        "effects": [
+          {
+            "op": "apply",
+            "status": "poison",
+            "value": 7,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "focus",
+      "name": "Focus",
+      "class": "mage",
+      "type": "skill",
+      "rarity": "starter",
+      "cost": 0,
+      "target": "none",
+      "exhaust": false,
+      "text": "Draw 2 cards. Discard 1.",
+      "effects": [
+        {
+          "op": "draw",
+          "value": 2
+        },
+        {
+          "op": "discard",
+          "value": 1
+        }
+      ],
+      "upgraded": {
+        "text": "Draw 3 cards. Discard 1.",
+        "effects": [
+          {
+            "op": "draw",
+            "value": 3
+          },
+          {
+            "op": "discard",
+            "value": 1
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "fireball",
+      "name": "Fireball",
+      "class": "mage",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 2,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 12 damage.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 12,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 16 damage.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 16,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "frost_lance",
+      "name": "Frost Lance",
+      "class": "mage",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 7 damage. Apply 1 Weak.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 7,
+          "target": "enemy"
+        },
+        {
+          "op": "apply",
+          "status": "weak",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 10 damage. Apply 2 Weak.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 10,
+            "target": "enemy"
+          },
+          {
+            "op": "apply",
+            "status": "weak",
+            "value": 2,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "arcane_shield",
+      "name": "Arcane Shield",
+      "class": "mage",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "target": "none",
+      "exhaust": false,
+      "text": "Gain 7 Block.",
+      "effects": [
+        {
+          "op": "block",
+          "value": 7
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 10 Block.",
+        "effects": [
+          {
+            "op": "block",
+            "value": 10
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "plague",
+      "name": "Plague",
+      "class": "mage",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": true,
+      "text": "Apply 6 Poison. Exhaust.",
+      "effects": [
+        {
+          "op": "apply",
+          "status": "poison",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Apply 9 Poison. Exhaust.",
+        "effects": [
+          {
+            "op": "apply",
+            "status": "poison",
+            "value": 9,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 50
+    },
+    {
+      "id": "chain_lightning",
+      "name": "Chain Lightning",
+      "class": "mage",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "target": "all_enemies",
+      "exhaust": false,
+      "text": "Deal 7 damage to all enemies.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 7,
+          "target": "all_enemies"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 10 damage to all enemies.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 10,
+            "target": "all_enemies"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "insight",
+      "name": "Insight",
+      "class": "mage",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "target": "none",
+      "exhaust": true,
+      "text": "Draw 3 cards. Exhaust.",
+      "effects": [
+        {
+          "op": "draw",
+          "value": 3
+        }
+      ],
+      "upgraded": {
+        "text": "Draw 4 cards. Exhaust.",
+        "effects": [
+          {
+            "op": "draw",
+            "value": 4
+          }
+        ]
+      },
+      "unlock_cost": 60
+    },
+    {
+      "id": "arcane_charge",
+      "name": "Arcane Charge",
+      "class": "mage",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "target": "none",
+      "exhaust": false,
+      "text": "At the start of your turn gain 1 Strength.",
+      "effects": [
+        {
+          "op": "apply",
+          "status": "strength_per_turn",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "upgraded": {
+        "cost": 0
+      },
+      "unlock_cost": 70
+    },
+    {
+      "id": "meteor",
+      "name": "Meteor",
+      "class": "mage",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "target": "all_enemies",
+      "exhaust": true,
+      "text": "Deal 25 damage to all enemies. Exhaust.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 25,
+          "target": "all_enemies"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 35 damage to all enemies. Exhaust.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 35,
+            "target": "all_enemies"
+          }
+        ]
+      },
+      "unlock_cost": 120
+    },
+    {
+      "id": "punch",
+      "name": "Punch",
+      "class": "neutral",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 5 damage. Gain 2 Block.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 5,
+          "target": "enemy"
+        },
+        {
+          "op": "block",
+          "value": 2
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 7 damage. Gain 3 Block.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 7,
+            "target": "enemy"
+          },
+          {
+            "op": "block",
+            "value": 3
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "class": "neutral",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "target": "none",
+      "exhaust": false,
+      "text": "Gain 6 Block.",
+      "effects": [
+        {
+          "op": "block",
+          "value": 6
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 9 Block.",
+        "effects": [
+          {
+            "op": "block",
+            "value": 9
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "strength_potion",
+      "name": "Strength Potion",
+      "class": "neutral",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "target": "none",
+      "exhaust": true,
+      "text": "Gain 1 Strength. Exhaust.",
+      "effects": [
+        {
+          "op": "apply",
+          "status": "strength",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 2 Strength. Exhaust.",
+        "effects": [
+          {
+            "op": "apply",
+            "status": "strength",
+            "value": 2,
+            "target": "self"
+          }
+        ]
+      },
+      "unlock_cost": 0
+    },
+    {
+      "id": "shadow_strike",
+      "name": "Shadow Strike",
+      "class": "neutral",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "target": "enemy",
+      "exhaust": false,
+      "text": "Deal 8 damage. Apply 1 Vulnerable.",
+      "effects": [
+        {
+          "op": "damage",
+          "value": 8,
+          "target": "enemy"
+        },
+        {
+          "op": "apply",
+          "status": "vulnerable",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "upgraded": {
+        "text": "Deal 11 damage. Apply 2 Vulnerable.",
+        "effects": [
+          {
+            "op": "damage",
+            "value": 11,
+            "target": "enemy"
+          },
+          {
+            "op": "apply",
+            "status": "vulnerable",
+            "value": 2,
+            "target": "enemy"
+          }
+        ]
+      },
+      "unlock_cost": 40
+    },
+    {
+      "id": "ancestral_spirit",
+      "name": "Ancestral Spirit",
+      "class": "neutral",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "target": "none",
+      "exhaust": true,
+      "text": "Heal 6 HP. Exhaust.",
+      "effects": [
+        {
+          "op": "heal",
+          "value": 6
+        }
+      ],
+      "upgraded": {
+        "text": "Heal 9 HP. Exhaust.",
+        "effects": [
+          {
+            "op": "heal",
+            "value": 9
+          }
+        ]
+      },
+      "unlock_cost": 50
+    },
+    {
+      "id": "dark_pact",
+      "name": "Dark Pact",
+      "class": "neutral",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 0,
+      "target": "none",
+      "exhaust": true,
+      "text": "Gain 1 Energy. Draw 2 cards. Exhaust.",
+      "effects": [
+        {
+          "op": "energy",
+          "value": 1
+        },
+        {
+          "op": "draw",
+          "value": 2
+        }
+      ],
+      "upgraded": {
+        "text": "Gain 1 Energy. Draw 3 cards. Exhaust.",
+        "effects": [
+          {
+            "op": "energy",
+            "value": 1
+          },
+          {
+            "op": "draw",
+            "value": 3
+          }
+        ]
+      },
+      "unlock_cost": 100
+    }
+  ]
+}

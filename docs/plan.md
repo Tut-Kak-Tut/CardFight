@@ -51,6 +51,8 @@ docs/ brief.md gdd.md plan.md tasks/ reports/
 | `discard` | `value` (гравець обирає) | |
 | `energy` | `value` | |
 | `heal` | `value` | |
+| `max_hp` | `value` (реліквії) | |
+| `gold` | `value` (реліквії) | |
 Статуси: `vulnerable`, `weak`, `strength`, `poison`, `bastion`, `strength_per_turn`.
 
 ## Запуск

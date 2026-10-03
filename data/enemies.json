@@ -1,0 +1,365 @@
+{
+  "enemies": [
+    {
+      "id": "skeleton_warrior",
+      "name": "Skeleton Warrior",
+      "max_hp": 24,
+      "tier": "normal",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 7,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 7,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "defend",
+              "effects": [
+                {
+                  "op": "block",
+                  "value": 8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skeleton_archer",
+      "name": "Skeleton Archer",
+      "max_hp": 18,
+      "tier": "normal",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 5,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 9,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "debuff",
+              "effects": [
+                {
+                  "op": "apply",
+                  "status": "weak",
+                  "value": 1,
+                  "target": "player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghoul",
+      "name": "Ghoul",
+      "max_hp": 32,
+      "tier": "normal",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 6,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "debuff",
+              "effects": [
+                {
+                  "op": "apply",
+                  "status": "vulnerable",
+                  "value": 1,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 10,
+                  "target": "player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark_cultist",
+      "name": "Dark Cultist",
+      "max_hp": 20,
+      "tier": "normal",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "buff",
+              "effects": [
+                {
+                  "op": "apply",
+                  "status": "strength",
+                  "value": 3,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 5,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 5,
+                  "target": "player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "max_hp": 28,
+      "tier": "normal",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "defend",
+              "effects": [
+                {
+                  "op": "block",
+                  "value": 10
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 12,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 6,
+                  "target": "player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bone_golem",
+      "name": "Bone Golem",
+      "max_hp": 70,
+      "tier": "elite",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 14,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "defend",
+              "effects": [
+                {
+                  "op": "block",
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "intent": "attack_debuff",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 10,
+                  "target": "player"
+                },
+                {
+                  "op": "apply",
+                  "status": "weak",
+                  "value": 1,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "buff",
+              "effects": [
+                {
+                  "op": "apply",
+                  "status": "strength",
+                  "value": 2,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lich_lord",
+      "name": "Lich Lord",
+      "max_hp": 140,
+      "tier": "boss",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 12,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "debuff",
+              "effects": [
+                {
+                  "op": "apply",
+                  "status": "poison",
+                  "value": 4,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack_defend",
+              "effects": [
+                {
+                  "op": "block",
+                  "value": 14
+                },
+                {
+                  "op": "damage",
+                  "value": 6,
+                  "target": "player"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "hp_threshold_pct": 50,
+          "on_enter": [
+            {
+              "op": "apply",
+              "status": "strength",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 16,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 8,
+                  "target": "player",
+                  "times": 2
+                }
+              ]
+            },
+            {
+              "intent": "debuff",
+              "effects": [
+                {
+                  "op": "apply",
+                  "status": "vulnerable",
+                  "value": 2,
+                  "target": "player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
