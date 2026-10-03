@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300"><defs>
+<linearGradient id="bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf7e8"/><stop offset="0.55" stop-color="#e8e2d0"/><stop offset="1" stop-color="#a89f85"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a5f22"/><stop offset="0.5" stop-color="#f0cf7a"/><stop offset="1" stop-color="#7a5f22"/></linearGradient>
+<linearGradient id="red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d04a42"/><stop offset="1" stop-color="#7a1f1c"/></linearGradient>
+<filter id="bl" x="-10%" y="-10%" width="120%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+<path id="t" d="M150 90 L130 75 L100 75 L78 95 L78 170 L100 190 L130 190 L150 175 M172 135 L190 122 L212 122 L228 138 L228 190 M228 152 L192 152 L174 165 L174 180 L190 190 L228 178 M255 122 V190 M255 150 L270 125 L295 122 M242 190 H268 M372 70 V190 M372 140 L355 122 L328 122 L310 140 L310 172 L328 190 L355 190 L372 172 M358 70 H372 M418 190 V75 H470 M418 130 H460 M404 190 H432 M495 122 V190 M495 100 V102 M580 122 V210 L565 225 L535 225 M580 140 L565 122 L540 122 L524 140 L524 172 L540 190 L565 190 L580 172 M612 70 V190 M612 145 L630 122 L655 122 L670 140 V190 M710 90 V175 L725 190 L742 190 M692 122 H740"/>
+</defs>
+<g transform="translate(55 0)" fill="none" stroke-linejoin="miter" stroke-linecap="square">
+<use href="#t" stroke="#000" stroke-width="34" opacity="0.5" transform="translate(0 6)" filter="url(#bl)"/>
+<use href="#t" stroke="#14161f" stroke-width="32"/>
+<use href="#t" stroke="url(#gold)" stroke-width="24"/>
+<use href="#t" stroke="url(#bone)" stroke-width="14"/>
+<use href="#t" stroke="#fff" stroke-width="2" opacity="0.5" transform="translate(-3 -3)"/>
+</g>
+<g stroke-linecap="round"><path d="M110 252 H790" stroke="#14161f" stroke-width="10"/><path d="M110 252 H790" stroke="url(#gold)" stroke-width="5"/></g>
+<g transform="translate(450 252)"><path d="M0 -26 L22 0 L0 26 L-22 0 Z" fill="url(#red)" stroke="#14161f" stroke-width="7"/><path d="M0 -26 L22 0 L0 26 L-22 0 Z" fill="none" stroke="url(#gold)" stroke-width="3"/><path d="M0 -14 L-8 0 L0 14" fill="none" stroke="#e8b0aa" stroke-width="2" opacity="0.6"/>
+<g stroke="#14161f" stroke-width="7" stroke-linecap="round"><path d="M-60 -12 L60 12 M60 -12 L-60 12" opacity="0"/></g></g>
+<g stroke="#a8322d" stroke-width="3"><path d="M100 252 l-20 0 M800 252 l20 0"/></g>
+<g fill="#c9a24b"><circle cx="90" cy="252" r="4"/><circle cx="810" cy="252" r="4"/></g>
+</svg>

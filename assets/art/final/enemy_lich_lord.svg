@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384" width="384" height="384">
+<defs>
+<linearGradient id="rb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d0a16"/><stop offset="0.5" stop-color="#2a1f3a"/><stop offset="1" stop-color="#150f22"/></linearGradient>
+<linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d890"/><stop offset="0.5" stop-color="#c9a24b"/><stop offset="1" stop-color="#6a4e1c"/></linearGradient>
+<linearGradient id="bn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e866f"/><stop offset="0.45" stop-color="#f0ead8"/><stop offset="1" stop-color="#b9b199"/></linearGradient>
+<radialGradient id="eye" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe0c0"/><stop offset="0.4" stop-color="#ff3a2a"/><stop offset="1" stop-color="#a8322d" stop-opacity="0"/></radialGradient>
+<radialGradient id="nec" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd0e0" stop-opacity="0.95"/><stop offset="0.3" stop-color="#e8402f" stop-opacity="0.7"/><stop offset="0.65" stop-color="#6a4aa8" stop-opacity="0.4"/><stop offset="1" stop-color="#3b5a8a" stop-opacity="0"/></radialGradient>
+<radialGradient id="aur" cx="0.5" cy="0.6" r="0.5"><stop offset="0" stop-color="#6a2a50" stop-opacity="0.4"/><stop offset="1" stop-color="#6a2a50" stop-opacity="0"/></radialGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="190" cy="200" rx="190" ry="190" fill="url(#aur)"/>
+<ellipse cx="192" cy="372" rx="140" ry="10" fill="url(#gr)"/>
+<!-- staff glow + energy -->
+<circle cx="340" cy="44" r="62" fill="url(#nec)"/>
+<g fill="none" stroke-linecap="round">
+<path d="M300 70 Q330 100 360 70 Q380 40 350 20" stroke="#e8402f" stroke-width="3" opacity="0.85"/>
+<path d="M312 26 Q340 -2 368 30 Q376 60 344 74" stroke="#7fa4e8" stroke-width="3" opacity="0.85"/>
+</g>
+<g stroke="#0a0b10" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<!-- staff -->
+<path d="M340 60 V340" stroke="#0a0b10" stroke-width="14"/>
+<path d="M340 60 V340" stroke="#d9d2bc" stroke-width="8"/>
+<path d="M340 70 V330" stroke="#c9a24b" stroke-width="3" stroke-dasharray="8 22"/>
+<!-- staff skull -->
+<path d="M320 40 Q318 14 340 14 Q362 14 360 40 Q360 52 352 56 V64 H328 V56 Q320 52 320 40 Z" fill="url(#bn)" stroke-width="5"/>
+<path d="M327 34 H338 L336 46 H328 Z M344 34 H355 L353 46 H344 Z" fill="#0a0b10" stroke-width="2"/>
+<!-- robe -->
+<path d="M192 90 Q130 100 122 170 L70 374 H314 L262 170 Q254 100 192 90 Z" fill="url(#rb)"/>
+<path d="M70 374 H314 L308 350 H76 Z" fill="url(#gd)"/>
+<path d="M150 150 Q120 260 96 350 M234 150 Q264 260 288 350 M192 200 V350 M170 180 Q160 270 150 350 M214 180 Q224 270 234 350" stroke="#0a0b10" stroke-width="3" fill="none" opacity="0.7"/>
+<path d="M164 110 Q192 150 220 110 L232 130 Q192 176 152 130 Z" fill="url(#gd)" stroke-width="4"/>
+<path d="M192 150 V350" stroke="#c9a24b" stroke-width="5"/>
+<!-- shoulders -->
+<path d="M118 140 Q112 108 150 104 L160 150 Q130 160 118 140 Z M266 140 Q272 108 234 104 L224 150 Q254 160 266 140 Z" fill="url(#gd)" stroke-width="5"/>
+<path d="M118 108 L110 80 L134 100 Z M266 108 L274 80 L250 100 Z" fill="url(#gd)" stroke-width="4"/>
+<!-- sleeves/arms -->
+<path d="M122 190 L52 230 L70 250 L140 230 Z" fill="url(#rb)"/>
+<path d="M262 190 L318 214 L332 196 L338 232 L300 246 L244 230 Z" fill="url(#rb)"/>
+<path d="M52 230 L70 250" stroke="url(#gd)" stroke-width="7"/>
+<path d="M300 246 L332 232" stroke="url(#gd)" stroke-width="7"/>
+<!-- reaching bony hand -->
+<circle cx="52" cy="232" r="9" fill="url(#bn)" stroke-width="3"/>
+<path d="M48 238 L28 258 M46 232 L22 244 M50 226 L28 224 M54 240 L42 266" stroke="#e8e2d0" stroke-width="5"/>
+<!-- skull -->
+<circle cx="192" cy="118" r="38" fill="url(#bn)"/>
+<path d="M170 148 H214 V160 Q192 170 170 160 Z" fill="url(#bn)" stroke-width="4"/>
+<path d="M178 150 V160 M188 152 V164 M198 152 V164 M208 150 V160" stroke="#0a0b10" stroke-width="2.5" fill="none"/>
+<path d="M156 108 Q166 98 182 114 L178 132 Q158 130 156 108 Z M202 114 Q218 98 228 108 Q226 130 206 132 Z" fill="#0a0b10" stroke-width="4"/>
+<path d="M186 134 L192 144 L198 134 Z" fill="#0a0b10" stroke-width="3"/>
+<path d="M176 86 L184 100 L176 108 M214 84 L208 98" stroke="#0a0b10" stroke-width="2.5" fill="none"/>
+<!-- crown -->
+<path d="M148 96 L156 40 L174 70 L192 28 L210 70 L228 40 L236 96 Z" fill="url(#gd)"/>
+<path d="M148 96 Q192 106 236 96 L236 86 Q192 96 148 86 Z" fill="url(#gd)" stroke-width="4"/>
+<path d="M156 40 L152 24 L162 44 M228 40 L232 24 L222 44 M192 28 L192 10 L198 30" stroke="url(#gd)" stroke-width="5" fill="none"/>
+<path d="M192 36 L198 48 L192 60 L186 48 Z" fill="#e8402f" stroke-width="3"/>
+</g>
+<!-- eyes -->
+<circle cx="176" cy="120" r="12" fill="url(#eye)"/>
+<circle cx="208" cy="120" r="12" fill="url(#eye)"/>
+<!-- chest rune -->
+<g fill="none" stroke="#c9a24b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="192" cy="240" r="22"/>
+<path d="M192 222 L202 252 L178 232 H206 L182 252 Z" stroke-width="2.5" stroke="#e8402f"/>
+</g>
+<!-- floating shards -->
+<g stroke="#0a0b10" stroke-width="3" stroke-linejoin="round">
+<path d="M60 90 L72 66 L80 96 Z" fill="#7fa4e8"/>
+<path d="M40 150 L52 134 L56 160 Z" fill="#e8402f"/>
+<path d="M290 120 L300 100 L310 124 Z" fill="#e8402f"/>
+<path d="M30 300 L44 280 L48 308 Z" fill="#7fa4e8"/>
+<path d="M276 300 L286 280 L294 304 Z" fill="#7fa4e8"/>
+<path d="M96 40 L106 22 L112 46 Z" fill="#a8322d"/>
+</g>
+<path d="M128 110 Q124 150 112 180 M156 56 L150 36" stroke="#c8b8e8" stroke-width="2.5" fill="none" opacity="0.5"/>
+<path d="M156 92 Q150 114 158 134" stroke="#fff" stroke-width="2.5" fill="none" opacity="0.5"/>
+</svg>

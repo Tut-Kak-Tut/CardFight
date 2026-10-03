@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+<linearGradient id="rb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a0d14"/><stop offset="0.5" stop-color="#4a2230"/><stop offset="1" stop-color="#2a121c"/></linearGradient>
+<linearGradient id="ch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0c070"/><stop offset="1" stop-color="#7a5a22"/></linearGradient>
+<radialGradient id="gl" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ff6a50" stop-opacity="0.8"/><stop offset="1" stop-color="#a8322d" stop-opacity="0"/></radialGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="128" cy="250" rx="76" ry="7" fill="url(#gr)"/>
+<g stroke="#0a0b10" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- robe -->
+<path d="M128 20 Q88 30 84 90 L56 248 H200 L172 90 Q168 30 128 20 Z" fill="url(#rb)"/>
+<path d="M104 120 Q96 190 84 244 M152 120 Q160 190 172 244 M128 130 V246" stroke="#0a0b10" stroke-width="2.5" fill="none" opacity="0.7"/>
+<path d="M56 248 H200 L198 238 H58 Z" fill="#a8322d"/>
+<!-- belt -->
+<path d="M92 152 L164 152" stroke="#3a2a1a" stroke-width="6"/>
+<!-- far arm with chalice (left side, toward viewer's left) -->
+<path d="M90 120 L60 150 L46 156 L96 176 Z" fill="url(#rb)"/>
+<!-- near sleeve right with dagger -->
+<path d="M166 124 L206 146 L196 170 L158 160 Z" fill="url(#rb)"/>
+<circle cx="204" cy="158" r="7" fill="#c9b8a0"/>
+<path d="M208 158 L240 120 L244 124 L214 166 Z" fill="#cfd3dc"/>
+<path d="M210 156 L238 124" stroke="#fff" stroke-width="1.5"/>
+<path d="M200 164 L214 172" stroke="#c9a24b" stroke-width="4"/>
+<path d="M240 120 L246 118 L244 126 Z" fill="#a8322d" stroke-width="2"/>
+<!-- hood -->
+<path d="M128 40 Q106 46 106 84 Q128 100 150 84 Q150 46 128 40 Z" fill="#05060a"/>
+</g>
+<!-- sigils -->
+<g stroke="#e8402f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="128" cy="182" r="17"/>
+<path d="M128 166 L137 194 L113 176 H143 L119 194 Z"/>
+<path d="M102 104 l10 12 l-10 12 M154 104 l-10 12 l10 12" opacity="0.85"/>
+<path d="M90 214 h18 M148 214 h18 M96 230 h10 M150 230 h10" opacity="0.7"/>
+</g>
+<!-- chalice -->
+<circle cx="52" cy="126" r="26" fill="url(#gl)"/>
+<g stroke="#0a0b10" stroke-width="3" stroke-linejoin="round">
+<path d="M36 112 H68 Q68 134 52 138 Q36 134 36 112 Z" fill="url(#ch)"/>
+<path d="M38 114 H66 Q65 120 62 122 H42 Q39 120 38 114 Z" fill="#e8402f" stroke="none"/>
+<path d="M52 138 V152 M42 156 Q52 148 62 156 Z" fill="url(#ch)"/>
+<path d="M46 138 L52 152 L58 138" fill="url(#ch)"/>
+</g>
+<path d="M44 128 L44 142 M60 130 L60 142" stroke="#a8322d" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+<path d="M44 164 Q44 170 44 174" stroke="#a8322d" stroke-width="3" stroke-linecap="round"/>
+<circle cx="44" cy="180" r="3" fill="#e8402f"/>
+<!-- eyes in shadow -->
+<circle cx="118" cy="74" r="4" fill="#ff6a50"/>
+<circle cx="138" cy="74" r="4" fill="#ff6a50"/>
+<circle cx="118" cy="74" r="8" fill="url(#gl)"/>
+<circle cx="138" cy="74" r="8" fill="url(#gl)"/>
+<path d="M96 40 Q88 64 90 92" stroke="#a46a86" stroke-width="2" fill="none" opacity="0.55"/>
+</svg>

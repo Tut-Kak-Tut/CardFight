@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920"><defs>
+<radialGradient id="p" cx="540" cy="960" r="1100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3a3326"/><stop offset="0.6" stop-color="#2b261f"/><stop offset="1" stop-color="#14161f"/></radialGradient>
+<pattern id="s" width="180" height="160" patternUnits="userSpaceOnUse"><path d="M0 0 H180 M0 80 H180 M90 0 V80 M0 80 V160 M180 80 V160" fill="none" stroke="#14161f" stroke-width="2" opacity="0.35"/><path d="M20 30 L40 34 M120 50 L146 46 M50 112 L70 118 M140 126 L162 122" stroke="#4a4030" stroke-width="2" stroke-linecap="round" opacity="0.5"/></pattern>
+<radialGradient id="c" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#c9a24b" stop-opacity="0.55"/><stop offset="1" stop-color="#c9a24b" stop-opacity="0"/></radialGradient>
+<linearGradient id="leather" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a3322"/><stop offset="1" stop-color="#1f1710"/></linearGradient>
+<radialGradient id="v" cx="50%" cy="50%" r="75%"><stop offset="0.5" stop-color="#14161f" stop-opacity="0"/><stop offset="1" stop-color="#14161f" stop-opacity="0.85"/></radialGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#p)"/>
+<rect width="1080" height="1920" fill="url(#s)"/>
+<g fill="none" stroke="#5a4a32" stroke-width="3" stroke-dasharray="14 10" opacity="0.5"><path d="M-20 300 Q200 380 340 300 T700 360 T1100 280"/><path d="M-20 1500 Q260 1440 460 1520 T1100 1480"/><path d="M120 -20 Q180 200 90 420"/><path d="M980 1920 Q900 1700 1000 1560"/></g>
+<g fill="#14161f" opacity="0.55"><path d="M0 120 Q60 80 100 140 Q150 90 190 150 Q240 110 280 170 Q320 130 360 190 L360 0 H0 Z"/><path d="M1080 1700 Q1020 1660 980 1720 Q930 1670 890 1730 Q840 1690 800 1750 L800 1920 H1080 Z"/><path d="M1080 200 Q1030 240 1000 300 Q960 270 930 340 L1080 380 Z"/><path d="M0 1560 Q50 1600 70 1660 Q110 1630 130 1700 L0 1760 Z"/></g>
+<g fill="#0e1018" opacity="0.7"><path d="M20 90 l14 -34 l14 34 Z M60 130 l12 -30 l12 30 Z M110 70 l14 -34 l14 34 Z M200 110 l12 -30 l12 30 Z"/><path d="M960 1740 l14 -34 l14 34 Z M1010 1790 l12 -30 l12 30 Z M900 1810 l14 -34 l14 34 Z"/></g>
+<g fill="#4a3322" opacity="0.5"><circle cx="150" cy="1240" r="3"/><circle cx="930" cy="760" r="3"/><circle cx="90" cy="800" r="2"/><circle cx="1010" cy="1200" r="2"/></g>
+<g stroke="#2a2d3c" stroke-width="2" fill="none" opacity="0.5"><path d="M60 900 L130 880 M950 1000 L1020 1020 M70 1050 L140 1070"/></g>
+<g stroke="url(#leather)" stroke-width="3"><path d="M0 0 L120 0 L0 120 Z" fill="url(#leather)"/><path d="M1080 0 L960 0 L1080 120 Z" fill="url(#leather)"/><path d="M0 1920 L120 1920 L0 1800 Z" fill="url(#leather)"/><path d="M1080 1920 L960 1920 L1080 1800 Z" fill="url(#leather)"/></g>
+<g stroke="#14161f" stroke-width="2" fill="none" opacity="0.6"><path d="M20 80 L80 20 M40 100 L100 40"/><path d="M1060 80 L1000 20 M1040 100 L980 40"/><path d="M20 1840 L80 1900 M40 1820 L100 1880"/><path d="M1060 1840 L1000 1900 M1040 1820 L980 1880"/></g>
+<g><circle cx="0" cy="0" r="260" fill="url(#c)"/><circle cx="1080" cy="0" r="260" fill="url(#c)"/><circle cx="0" cy="1920" r="260" fill="url(#c)"/><circle cx="1080" cy="1920" r="260" fill="url(#c)"/></g>
+<rect width="1080" height="1920" fill="url(#v)"/>
+<rect x="150" y="300" width="780" height="1320" fill="#14161f" opacity="0.18"/>
+</svg>

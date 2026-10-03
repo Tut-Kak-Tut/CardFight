@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+<linearGradient id="st" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a3446"/><stop offset="0.55" stop-color="#7d8aa0"/><stop offset="0.8" stop-color="#b9c3d2"/><stop offset="1" stop-color="#55627a"/></linearGradient>
+<linearGradient id="tab" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b7b09b"/><stop offset="0.6" stop-color="#e8e2d0"/><stop offset="1" stop-color="#c9c2ac"/></linearGradient>
+<linearGradient id="bl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f98a6"/><stop offset="0.5" stop-color="#f2f0e8"/><stop offset="1" stop-color="#9aa3b0"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b5a8a"/><stop offset="1" stop-color="#1b2a45"/></linearGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="130" cy="248" rx="70" ry="8" fill="url(#gr)"/>
+<g stroke="#0a0b10" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- cape -->
+<path d="M96 124 Q60 170 66 238 L96 244 L104 150 Z" fill="#7a2420"/>
+<path d="M96 124 Q80 170 82 230" fill="none" stroke="#a8322d" stroke-width="3"/>
+<!-- legs -->
+<path d="M100 188 L96 244 L124 244 L128 192 Z" fill="url(#st)"/>
+<path d="M132 190 L134 244 L166 244 L160 188 Z" fill="url(#st)"/>
+<path d="M92 244 H128 L130 252 H88 Z M130 244 H170 L172 252 H128 Z" fill="#2a3446"/>
+<!-- tabard / torso -->
+<path d="M88 132 L128 112 L170 132 L176 196 L84 196 Z" fill="url(#st)"/>
+<path d="M104 128 L152 128 L158 236 L100 236 Z" fill="url(#tab)"/>
+<path d="M128 140 V228 M116 176 H140" stroke="#a8322d" stroke-width="6"/>
+<path d="M100 192 H158" stroke="#3a2a1a" stroke-width="5"/>
+<rect x="123" y="188" width="10" height="9" fill="#c9a24b" stroke-width="2"/>
+<!-- pauldrons -->
+<path d="M82 128 Q86 110 108 112 L112 136 Q92 140 82 128 Z" fill="url(#st)"/>
+<path d="M146 112 Q172 108 180 128 Q168 142 148 136 Z" fill="url(#st)"/>
+<!-- sword arm -->
+<path d="M168 132 L206 76 L218 84 L182 146 Z" fill="url(#st)"/>
+<circle cx="212" cy="80" r="9" fill="#5b667c"/>
+<!-- sword -->
+<path d="M218 66 L228 22 L240 12 L240 30 L230 76 Z" fill="url(#bl)"/>
+<path d="M234 20 L228 70" stroke="#6b7482" stroke-width="2" fill="none"/>
+<path d="M200 70 L232 84 L228 92 L196 78 Z" fill="#c9a24b"/>
+<circle cx="205" cy="90" r="5" fill="#c9a24b"/>
+<!-- shield -->
+<path d="M58 106 L102 100 L102 176 Q80 196 58 168 Z" fill="url(#sh)"/>
+<path d="M64 114 L96 109 L96 170 Q80 184 64 164 Z" fill="none" stroke="#c9a24b" stroke-width="2.5"/>
+<path d="M80 114 V176 M64 140 H96" stroke="#e8e2d0" stroke-width="4" opacity="0.8"/>
+<path d="M60 108 L100 102" stroke="#9fb6d8" stroke-width="2" opacity="0.7"/>
+<!-- neck/helm -->
+<rect x="112" y="92" width="38" height="26" rx="6" fill="url(#st)"/>
+<path d="M104 58 Q104 22 130 20 Q154 22 154 58 L154 96 Q130 108 104 96 Z" fill="url(#st)"/>
+<path d="M110 54 H154 V66 H110 Z" fill="#0a0b10"/>
+<path d="M118 76 H150 M118 84 H150" stroke="#0a0b10" stroke-width="3"/>
+<path d="M118 58 H124 M138 58 H144" stroke="#9fb6d8" stroke-width="2.5"/>
+<path d="M130 22 V52" stroke="#0a0b10" stroke-width="2.5"/>
+<!-- plume -->
+<path d="M126 22 Q130 0 146 4 Q138 14 138 24 Z" fill="#a8322d"/>
+</g>
+<!-- scratches & rim light -->
+<path d="M150 30 Q154 48 152 90 M158 138 L172 190" stroke="#d8e2f2" stroke-width="2" fill="none" opacity="0.65" stroke-linecap="round"/>
+<path d="M112 150 l8 12 M144 160 l-6 10" stroke="#0a0b10" stroke-width="2" opacity="0.5"/>
+</svg>

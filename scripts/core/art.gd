@@ -13,8 +13,12 @@ static func _resolve(name: String) -> String:
 		var base := name.trim_suffix("_locked")
 		if ResourceLoader.exists(FINAL + name + ".png"):
 			return FINAL + name + ".png"
+		if ResourceLoader.exists(FINAL + name + ".svg"):
+			return FINAL + name + ".svg"
 		if ResourceLoader.exists(FINAL + base + ".png"):
 			return FINAL + base + ".png"
+		if ResourceLoader.exists(FINAL + base + ".svg"):
+			return FINAL + base + ".svg"
 		if ResourceLoader.exists(PLACEHOLDER + name + ".svg"):
 			return PLACEHOLDER + name + ".svg"
 		if ResourceLoader.exists(PLACEHOLDER + base + ".svg"):
@@ -22,6 +26,8 @@ static func _resolve(name: String) -> String:
 		return ""
 	if ResourceLoader.exists(FINAL + name + ".png"):
 		return FINAL + name + ".png"
+	if ResourceLoader.exists(FINAL + name + ".svg"):
+		return FINAL + name + ".svg"
 	if ResourceLoader.exists(PLACEHOLDER + name + ".svg"):
 		return PLACEHOLDER + name + ".svg"
 	return ""

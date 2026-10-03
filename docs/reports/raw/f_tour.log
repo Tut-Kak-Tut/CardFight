@@ -1,0 +1,68 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[tour] menu btns=["Continue", "New Run", "Sanctuary", "Settings"]
+[tour] CONTINUE -> scene=RewardsScreen
+[tour] continue scene=RewardsScreen paused=false shards=10 run: char=knight hp=72/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=0 result='' layers=0 screen=rewards
+[tour] BACK on continued(RewardsScreen): -> scene=RewardsScreen paused=false
+[tour] after back scene=RewardsScreen
+[tour] sanctuary scene=Sanctuary btns=["Back"]
+[tour] BACK on sanctuary(Sanctuary): -> scene=MainMenu paused=false
+[tour] after sanctuary back: MainMenu
+[tour] BACK on charsel(CharacterSelect): -> scene=MainMenu paused=false
+[tour] after charsel back: MainMenu
+[tour] begin scene=MapScreen paused=false shards=10 run: char=knight hp=80/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=-1 result='' layers=0 screen=map
+[tour] BACK on map(MapScreen): -> scene=MapScreen paused=true
+[tour] entered -> CombatScreen
+[tour] BACK on combat(CombatScreen): -> scene=CombatScreen paused=true
+[tour] combat result=win hp=80
+[tour] BACK on rewards(RewardsScreen): -> scene=RewardsScreen paused=false
+[tour] rewards empties=1 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] rewards after: ["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] BACK on rewards(RewardsScreen): -> scene=RewardsScreen paused=false
+[tour] rewards empties=0 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10", "Yes", "No"]
+[tour] rewards after: ["Deck 10"]
+[tour] NO BUTTON 'Continue' in ["Deck 10"]
+[tour] entered -> CombatScreen
+[tour] BACK on combat(CombatScreen): -> scene=CombatScreen paused=true
+[tour] combat result=win hp=54
+[tour] BACK on rewards(RewardsScreen): -> scene=RewardsScreen paused=false
+[tour] rewards empties=1 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] rewards after: ["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] BACK on rewards(RewardsScreen): -> scene=RewardsScreen paused=false
+[tour] rewards empties=0 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10", "Yes", "No"]
+[tour] rewards after: ["Deck 10"]
+[tour] NO BUTTON 'Continue' in ["Deck 10"]
+[tour] entered -> CombatScreen
+[tour] combat result=win hp=49
+[tour] rewards empties=1 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] rewards after: ["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] rewards empties=0 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10", "Yes", "No"]
+[tour] rewards after: ["Deck 10"]
+[tour] NO BUTTON 'Continue' in ["Deck 10"]
+[tour] entered -> CombatScreen
+[tour] combat result=win hp=24
+[tour] rewards empties=1 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] rewards after: ["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10"]
+[tour] rewards empties=0 btns=["Take(dis)", "Skip (+10 Gold)", "Continue", "Deck 10", "Yes", "No"]
+[tour] rewards after: ["Deck 10"]
+[tour] NO BUTTON 'Continue' in ["Deck 10"]
+[tour] entered -> CombatScreen
+[tour] combat result=lose hp=3
+[tour] RESULT screen btns=["Continue", "Sanctuary"]
+[tour] result scene=RunResultScreen paused=false shards=30 run: char=knight hp=0/80 gold=123 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=9 result='defeat' layers=4 screen=combat
+[tour] FILE meta.json (145 B): {"awarded_runs":[3828705720,903028324,3343873327],"settings":{"sound":true,"vibration":true},"shards":30,"unlocked_cards":[],"unlocked_chars":[]}
+[tour] FILE run.json ABSENT
+[tour] BACK on result(RunResultScreen): -> scene=RunResultScreen paused=false
+[tour] scene after result back: RunResultScreen
+[tour] visits={ "MapScreen": 5, "CombatScreen": 5, "RewardsScreen": 8, "RunResultScreen": 1 }
+[tour] end scene=RunResultScreen paused=false shards=30 run: char=knight hp=0/80 gold=123 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=9 result='defeat' layers=4 screen=combat
+[tour] FILE meta.json (145 B): {"awarded_runs":[3828705720,903028324,3343873327],"settings":{"sound":true,"vibration":true},"shards":30,"unlocked_cards":[],"unlocked_chars":[]}
+[tour] FILE run.json ABSENT
+[tour] sanct2 scene=Sanctuary paused=false shards=30 run: char=knight hp=0/80 gold=123 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=9 result='defeat' layers=4 screen=combat
+[tour] sanct btns=["Back"]
+[tour] BACK on sanct2(Sanctuary): -> scene=MainMenu paused=false
+DRIVE DONE tour
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

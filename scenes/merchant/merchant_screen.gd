@@ -226,7 +226,7 @@ func _on_remove() -> void:
 	_busy = true
 	overlay.open(run.deck_cards(), "Remove a card", true, all)
 	var card: Dictionary = await _await_pick()
-	if card.is_empty():
+	if card.is_empty() or not is_inside_tree():
 		_busy = false
 		return
 	var price := int(RunState.shop["remove_price"])
@@ -250,7 +250,11 @@ func _await_pick() -> Dictionary:
 	overlay.picked.connect(on_pick)
 	overlay.closed.connect(on_close)
 	while not done[0]:
+		if not is_inside_tree():
+			return {}
 		await get_tree().process_frame
+		if not is_inside_tree():
+			return {}
 	overlay.picked.disconnect(on_pick)
 	overlay.closed.disconnect(on_close)
 	return result[0]

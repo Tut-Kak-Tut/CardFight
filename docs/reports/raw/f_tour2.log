@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[tour2] sanct btns=["Back"]
+[tour2] sanct pressed 0 unlock btns; shards=500 unlocked_cards=1 chars=["mage"] btns=["Back"]
+[tour2] mage page btns=["View Deck", "<", ">", "Begin", "Back"]
+[tour2] mage-begin scene=MapScreen paused=false shards=500 run: char=mage hp=70/70 gold=50 deck=10 ["spark", "spark", "spark", "spark", "barrier", "barrier", "barrier", "barrier", "poison_cloud", "focus"] relics=[] node=-1 result='' layers=0 screen=map
+[tour2] merchant btns=["Remove a card — 75", "Heal +20% — 60", "Deck 10", "Leave"]
+[tour2] merchant-after scene=MerchantScreen paused=false shards=500 run: char=mage hp=44/70 gold=340 deck=10 ["spark", "spark", "spark", "spark", "barrier", "barrier", "barrier", "barrier", "poison_cloud", "focus"] relics=[] node=-1 result='' layers=0 screen=merchant
+ERROR: Parameter "data.tree" is null.
+   at: get_tree (scene/main/node.h:559)
+   GDScript backtrace (most recent call first):
+       [0] _await_pick (res://scenes/merchant/merchant_screen.gd:253)
+SCRIPT ERROR: Invalid access to property or key 'process_frame' on a base object of type 'null instance'.
+   at: _await_pick (res://scenes/merchant/merchant_screen.gd:253)
+   GDScript backtrace (most recent call first):
+       [0] _await_pick (res://scenes/merchant/merchant_screen.gd:253)
+[tour2] BACK on merchant(MerchantScreen): -> scene=MapScreen paused=false
+[tour2] scene after merchant back: MapScreen
+[tour2] rest btns=["Deck 10", "Rest (+35% HP) +24", "Upgrade a card"]
+[tour2] rest-after scene=RestScreen paused=false shards=500 run: char=mage hp=44/70 gold=340 deck=10 ["spark", "spark", "spark", "spark", "barrier", "barrier", "barrier", "barrier", "poison_cloud", "focus"] relics=[] node=-1 result='' layers=1 screen=rest
+[tour2] rest after btns=["Deck 10", "Leave"]
+[tour2] scene after rest: MapScreen
+[tour2] CONTINUE roundtrip same=false scene=MapScreen
+[tour2] after boss win scene=RunResultScreen btns=["Continue", "Sanctuary"] result=victory shards=545
+[tour2] FILE meta.json (188 B): {"awarded_runs":[3828705720,903028324,3343873327,1849821692,877754169],"settings":{"sound":true,"vibration":true},"shards":545,"unlocked_cards":["shadow_strike"],"unlocked_chars":["mage"]}
+[tour2] FILE run.json ABSENT
+[tour2] after result Continue: CharacterSelect ["View Deck", "<", ">", "Begin", "Back"]
+[tour2] scene CharacterSelect
+[tour2] has_saved_run=false
+DRIVE DONE tour2
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

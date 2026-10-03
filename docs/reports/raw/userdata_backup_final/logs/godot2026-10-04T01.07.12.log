@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RESULT knight policy=random n=5 win=0.0% boss_reached=5 avg_turns=40.4 med_turns=39 avg_battles=5.0 avg_layers=9.0 avg_gold_end=86 avg_earned=119 avg_spent=112 avg_shards=60.0 avg_deck=14.4 caps=0
+DEATHS knight boss@L10=5 
+RESULT mage policy=random n=5 win=20.0% boss_reached=3 avg_turns=25.8 med_turns=26 avg_battles=3.8 avg_layers=7.4 avg_gold_end=71 avg_earned=90 avg_spent=87 avg_shards=55.0 avg_deck=13.2 caps=0
+DEATHS mage battle@L7=1 boss@L10=2 elite@L4=1 

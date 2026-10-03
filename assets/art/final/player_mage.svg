@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+<linearGradient id="rb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14223d"/><stop offset="0.6" stop-color="#3b5a8a"/><stop offset="1" stop-color="#6f8fc2"/></linearGradient>
+<linearGradient id="hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b4672"/><stop offset="1" stop-color="#101a30"/></linearGradient>
+<radialGradient id="orb" cx="0.4" cy="0.4" r="0.7"><stop offset="0" stop-color="#ffffff"/><stop offset="0.35" stop-color="#9fd0ff"/><stop offset="1" stop-color="#3b5a8a"/></radialGradient>
+<radialGradient id="gl" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#7fb4ff" stop-opacity="0.8"/><stop offset="1" stop-color="#7fb4ff" stop-opacity="0"/></radialGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="130" cy="250" rx="64" ry="7" fill="url(#gr)"/>
+<circle cx="212" cy="36" r="34" fill="url(#gl)"/>
+<g stroke="#0a0b10" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- staff -->
+<path d="M214 52 L232 240" stroke="#5a4326" stroke-width="7" fill="none"/>
+<path d="M214 52 L232 240" stroke="#c9a24b" stroke-width="2" stroke-dasharray="6 18" fill="none"/>
+<path d="M196 40 Q198 18 212 16 Q228 18 228 40 L222 44 L204 44 Z" fill="#c9a24b"/>
+<circle cx="212" cy="34" r="14" fill="url(#orb)"/>
+<!-- robe -->
+<path d="M96 250 L104 118 L150 114 L178 250 Z" fill="url(#rb)"/>
+<path d="M96 250 L178 250 L176 238 L98 238 Z" fill="#c9a24b"/>
+<path d="M126 124 L134 238" stroke="#c9a24b" stroke-width="3" fill="none"/>
+<path d="M112 140 Q132 156 150 138" stroke="#0a0b10" stroke-width="2.5" fill="none" opacity="0.6"/>
+<path d="M112 190 Q104 220 106 238 M148 190 Q160 216 164 238" stroke="#0a0b10" stroke-width="2" fill="none" opacity="0.55"/>
+<!-- belt -->
+<path d="M106 164 L154 166" stroke="#3a2a1a" stroke-width="6"/>
+<rect x="124" y="160" width="12" height="12" rx="2" fill="#c9a24b" stroke-width="2"/>
+<!-- sleeve + arm toward runes -->
+<path d="M146 122 L196 82 L206 94 L158 146 Z" fill="url(#rb)"/>
+<path d="M192 80 L208 92" stroke="#c9a24b" stroke-width="5"/>
+<circle cx="205" cy="82" r="8" fill="#d9c3a0"/>
+<!-- hood -->
+<path d="M98 80 Q98 28 132 14 Q166 30 168 82 L180 90 Q160 96 150 84 L108 90 Z" fill="url(#hd)"/>
+<path d="M112 80 Q112 44 134 38 Q156 46 154 82 Q132 100 112 80 Z" fill="#05060a"/>
+<path d="M104 86 Q132 106 164 86" stroke="#c9a24b" stroke-width="3" fill="none"/>
+</g>
+<!-- eyes -->
+<path d="M122 66 l8 3 l-8 2 Z M140 66 l-8 3 l8 2 Z" fill="#9fd0ff"/>
+<!-- runes -->
+<g fill="none" stroke="#9fd0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="186" cy="118" r="22" stroke-dasharray="4 5" opacity="0.9"/>
+<path d="M176 108 L186 100 L196 108 M178 124 H194 M186 110 V128" />
+<path d="M160 70 l6 8 l-6 8 M240 112 l-6 8 l-8 -2" opacity="0.8"/>
+</g>
+<circle cx="205" cy="82" r="3" fill="#fff" opacity="0.8"/>
+<path d="M104 120 Q100 180 98 240" stroke="#9fb6d8" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

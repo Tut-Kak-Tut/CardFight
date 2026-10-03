@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RESULT knight policy=smart n=300 win=29.0% boss_reached=276 avg_turns=45.4 med_turns=44 avg_battles=5.6 avg_layers=9.0 avg_gold_end=104 avg_earned=117 avg_spent=66 avg_shards=62.6 avg_deck=16.3 caps=0
+DEATHS knight battle@L3=1 battle@L5=1 battle@L6=2 battle@L7=3 battle@L8=7 battle@L9=2 boss@L10=189 elite@L4=1 elite@L5=3 elite@L6=2 elite@L8=2 
+RESULT mage policy=smart n=300 win=0.3% boss_reached=136 avg_turns=24.6 med_turns=25 avg_battles=4.8 avg_layers=7.2 avg_gold_end=91 avg_earned=92 avg_spent=53 avg_shards=40.9 avg_deck=15.1 caps=0
+DEATHS mage battle@L4=2 battle@L5=14 battle@L6=16 battle@L7=32 battle@L8=23 battle@L9=17 boss@L10=135 elite@L4=11 elite@L5=14 elite@L6=13 elite@L7=4 elite@L8=14 elite@L9=4 

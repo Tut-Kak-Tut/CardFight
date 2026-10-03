@@ -63,6 +63,7 @@ GODOT="C:/Users/Vova/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEn
 "$GODOT" --path .                               # запуск гри (вікно 540x960)
 "$GODOT" -e --path .                            # редактор
 "$GODOT" --headless --path . --export-debug "Android" build/CardFight.apk   # debug APK (docs/android.md)
+"$GODOT" --headless --path . -s tools/sim.gd -- 300 all      # симуляція забігів ботом (runs, all|knight|mage; ~40 с на 300x2)
 ```
 
 ## Етапи

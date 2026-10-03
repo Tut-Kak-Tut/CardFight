@@ -124,7 +124,7 @@ func _on_upgrade() -> void:
 	_busy = true
 	overlay.open(run.deck_cards(), "Upgrade a card", true, run.upgradeable_indices())
 	var card: Dictionary = await _await_pick()
-	if card.is_empty():
+	if card.is_empty() or not is_inside_tree():
 		_busy = false
 		return
 	var idx := int(card["deck_index"])
@@ -183,6 +183,8 @@ func _show_compare(cid: String) -> void:
 	add_child(_compare)
 	_compare.set_meta("result_signal", func() -> bool:
 		while answer[0] == null:
+			if not is_inside_tree():
+				return false
 			await get_tree().process_frame
 		return answer[0])
 
@@ -195,7 +197,11 @@ func _await_pick() -> Dictionary:
 	overlay.picked.connect(on_pick)
 	overlay.closed.connect(on_close)
 	while not done[0]:
+		if not is_inside_tree():
+			return {}
 		await get_tree().process_frame
+		if not is_inside_tree():
+			return {}
 	overlay.picked.disconnect(on_pick)
 	overlay.closed.disconnect(on_close)
 	return result[0]

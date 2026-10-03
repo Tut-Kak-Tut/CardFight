@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f8fc2" stop-opacity="0.9"/><stop offset="0.5" stop-color="#3b5a8a" stop-opacity="0.65"/><stop offset="1" stop-color="#14161f" stop-opacity="0.05"/></linearGradient>
+<linearGradient id="in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0f1c"/><stop offset="1" stop-color="#1b2a45" stop-opacity="0.2"/></linearGradient>
+<radialGradient id="eye" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff"/><stop offset="0.4" stop-color="#9fd0ff"/><stop offset="1" stop-color="#3b5a8a" stop-opacity="0"/></radialGradient>
+<radialGradient id="aura" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#5f86c4" stop-opacity="0.45"/><stop offset="1" stop-color="#5f86c4" stop-opacity="0"/></radialGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3b5a8a" stop-opacity="0.4"/><stop offset="1" stop-color="#3b5a8a" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="128" cy="248" rx="70" ry="8" fill="url(#gr)"/>
+<ellipse cx="124" cy="120" rx="108" ry="116" fill="url(#aura)"/>
+<!-- shroud -->
+<path d="M128 18 Q78 22 76 90 Q60 150 46 244 L72 226 L88 250 L106 222 L128 252 L150 222 L168 250 L184 226 L210 244 Q198 150 180 90 Q178 22 128 18 Z" fill="url(#sh)" stroke="#cfe0f5" stroke-width="3" stroke-linejoin="round"/>
+<!-- inner folds -->
+<path d="M100 100 Q90 170 78 232 M156 100 Q166 170 180 232 M128 130 Q124 190 128 240 M114 140 Q108 190 106 226 M142 140 Q148 190 150 226" stroke="#9fc0ee" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/>
+<path d="M60 220 Q52 236 40 248 M196 222 Q206 238 216 250" stroke="#cfe0f5" stroke-width="2" fill="none" opacity="0.5"/>
+<!-- hood hollow -->
+<path d="M128 36 Q100 42 100 82 Q100 104 118 112 L138 112 Q156 104 156 82 Q156 42 128 36 Z" fill="url(#in)" stroke="#0a0b10" stroke-width="3"/>
+<path d="M104 60 L120 78 L102 84 Z M152 60 L136 78 L154 84 Z" fill="#0a0b10"/>
+<ellipse cx="128" cy="100" rx="8" ry="12" fill="#05060a"/>
+<!-- reaching skeletal hand -->
+<path d="M82 118 Q50 136 28 176" stroke="#cfe0f5" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.8"/>
+<path d="M82 118 Q50 136 28 176" stroke="#6f8fc2" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+<g stroke="#e8e2d0" stroke-width="3.5" stroke-linecap="round" fill="none">
+<path d="M28 176 L14 192 M28 176 L20 198 M28 176 L28 202 M28 176 L38 198"/>
+</g>
+<path d="M14 192 l-2 4 M20 198 l-2 5 M28 202 l0 5 M38 198 l2 5" stroke="#0a0b10" stroke-width="2"/>
+<circle cx="28" cy="176" r="5" fill="#e8e2d0" stroke="#0a0b10" stroke-width="2"/>
+<!-- eyes -->
+<circle cx="112" cy="70" r="10" fill="url(#eye)"/>
+<circle cx="144" cy="70" r="10" fill="url(#eye)"/>
+<path d="M92 30 Q84 60 90 90" stroke="#fff" stroke-width="2" fill="none" opacity="0.5"/>
+<g fill="#cfe0f5" opacity="0.6"><circle cx="60" cy="236" r="3"/><circle cx="196" cy="230" r="2.5"/><circle cx="224" cy="200" r="2"/><circle cx="34" cy="120" r="2"/><circle cx="214" cy="110" r="2.5"/></g>
+</svg>

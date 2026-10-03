@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920"><defs>
+<radialGradient id="w" cx="540" cy="900" r="900" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8a431f"/><stop offset="0.3" stop-color="#4a2a22"/><stop offset="0.65" stop-color="#1e2132"/><stop offset="1" stop-color="#0d0e14"/></radialGradient>
+<radialGradient id="f" cx="540" cy="900" r="280" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f2c45a" stop-opacity="0.75"/><stop offset="1" stop-color="#c9a24b" stop-opacity="0"/></radialGradient>
+<linearGradient id="fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#c9a24b"/><stop offset="0.5" stop-color="#e8782b"/><stop offset="1" stop-color="#a8322d"/></linearGradient>
+<linearGradient id="st" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14161f"/><stop offset="0.5" stop-color="#3a3d4e"/><stop offset="1" stop-color="#0e1018"/></linearGradient>
+<radialGradient id="ff" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f2d98a"/><stop offset="1" stop-color="#c9a24b" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#w)"/>
+<g fill="#0a0b11"><path d="M0 0 H1080 V300 Q990 230 920 340 Q840 240 740 350 Q640 250 540 360 Q440 240 340 350 Q240 230 160 340 Q80 240 0 300 Z"/>
+<path d="M0 300 V1300 Q70 1100 20 900 Q60 600 0 300 Z M1080 300 V1300 Q1010 1100 1060 900 Q1020 600 1080 300 Z" opacity="0.85"/>
+<path d="M90 300 L80 700 L100 700 L110 300 Z M980 300 L990 800 L1010 800 L1000 300 Z" opacity="0.9"/></g>
+<g stroke="#0a0b11" stroke-width="10" fill="none" stroke-linecap="round"><path d="M95 600 L40 540 M95 480 L150 420 M995 650 L1050 590 M995 520 L940 470"/></g>
+<g fill="url(#st)" stroke="#07080c" stroke-width="3"><path d="M180 1100 L200 820 L260 800 L290 1100 Z"/><path d="M820 1100 L840 780 L900 760 L930 1100 Z"/><path d="M300 1160 L310 1000 L350 990 L360 1160 Z" opacity="0.8"/></g>
+<g stroke="#3b5a8a" stroke-width="2" fill="none" opacity="0.7"><path d="M215 900 h30 M225 960 h20 M855 880 h30 M865 950 h22"/></g>
+<circle cx="540" cy="900" r="280" fill="url(#f)"/>
+<ellipse cx="540" cy="1018" rx="160" ry="28" fill="#07080c" opacity="0.8"/>
+<g stroke="#e8e2d0" stroke-width="22" stroke-linecap="round" opacity="0.85"><path d="M400 1005 L680 965 M400 965 L680 1005"/></g>
+<g stroke="#14161f" stroke-width="3" opacity="0.6"><path d="M420 985 L660 985"/></g>
+<path d="M540 740 Q595 830 590 885 Q640 855 632 930 Q632 995 540 995 Q448 995 448 930 Q448 865 492 845 Q487 890 515 890 Q485 815 540 740 Z" fill="url(#fl)"/>
+<path d="M540 830 Q585 905 578 950 Q572 990 540 990 Q508 990 502 950 Q496 905 540 830 Z" fill="#f2c45a"/>
+<path d="M540 900 Q562 940 556 965 Q550 985 540 985 Q530 985 524 965 Q518 940 540 900 Z" fill="#fff1c4"/>
+<g><circle cx="300" cy="700" r="14" fill="url(#ff)"/><circle cx="780" cy="640" r="12" fill="url(#ff)"/><circle cx="640" cy="520" r="10" fill="url(#ff)"/><circle cx="420" cy="560" r="12" fill="url(#ff)"/><circle cx="200" cy="1300" r="10" fill="url(#ff)"/><circle cx="880" cy="1240" r="12" fill="url(#ff)"/><circle cx="540" cy="640" r="6" fill="url(#ff)"/></g>
+<path d="M0 1920 V1480 Q200 1400 400 1470 Q700 1390 1080 1490 V1920 Z" fill="#0a0b11" opacity="0.9"/>
+<g stroke="#14161f" stroke-width="3" opacity="0.8" fill="none"><path d="M100 1560 l6 -30 M140 1580 l-4 -26 M900 1540 l8 -28 M960 1580 l-6 -26 M500 1520 l4 -24"/></g>
+<rect y="1300" width="1080" height="620" fill="#07080c" opacity="0.3"/>
+</svg>

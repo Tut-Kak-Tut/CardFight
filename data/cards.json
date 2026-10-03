@@ -404,19 +404,19 @@
       "cost": 1,
       "target": "none",
       "exhaust": false,
-      "text": "Gain 5 Block.",
+      "text": "Gain 7 Block.",
       "effects": [
         {
           "op": "block",
-          "value": 5
+          "value": 7
         }
       ],
       "upgraded": {
-        "text": "Gain 8 Block.",
+        "text": "Gain 10 Block.",
         "effects": [
           {
             "op": "block",
-            "value": 8
+            "value": 10
           }
         ]
       },
@@ -567,19 +567,19 @@
       "cost": 1,
       "target": "none",
       "exhaust": false,
-      "text": "Gain 7 Block.",
+      "text": "Gain 9 Block.",
       "effects": [
         {
           "op": "block",
-          "value": 7
+          "value": 9
         }
       ],
       "upgraded": {
-        "text": "Gain 10 Block.",
+        "text": "Gain 12 Block.",
         "effects": [
           {
             "op": "block",
-            "value": 10
+            "value": 12
           }
         ]
       },
@@ -625,20 +625,20 @@
       "cost": 2,
       "target": "all_enemies",
       "exhaust": false,
-      "text": "Deal 7 damage to all enemies.",
+      "text": "Deal 8 damage to all enemies.",
       "effects": [
         {
           "op": "damage",
-          "value": 7,
+          "value": 8,
           "target": "all_enemies"
         }
       ],
       "upgraded": {
-        "text": "Deal 10 damage to all enemies.",
+        "text": "Deal 11 damage to all enemies.",
         "effects": [
           {
             "op": "damage",
-            "value": 10,
+            "value": 11,
             "target": "all_enemies"
           }
         ]

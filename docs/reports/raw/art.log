@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ART bg_combat                    FINAL  true size=(1080.0, 1920.0) ph=(1080.0, 1920.0) OK
+ART bg_map                       FINAL  true size=(1080.0, 1920.0) ph=(1080.0, 1920.0) OK
+ART bg_menu                      FINAL  true size=(1080.0, 1920.0) ph=(1080.0, 1920.0) OK
+ART bg_merchant                  FINAL  true size=(1080.0, 1920.0) ph=(1080.0, 1920.0) OK
+ART bg_rest                      FINAL  true size=(1080.0, 1920.0) ph=(1080.0, 1920.0) OK
+ART bg_sanctuary                 FINAL  true size=(1080.0, 1920.0) ph=(1080.0, 1920.0) OK
+ART card_frame_attack            FINAL  true size=(240.0, 340.0) ph=(240.0, 340.0) OK
+ART card_frame_power             FINAL  true size=(240.0, 340.0) ph=(240.0, 340.0) OK
+ART card_frame_skill             FINAL  true size=(240.0, 340.0) ph=(240.0, 340.0) OK
+ART enemy_bone_golem             FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART enemy_bone_minion            FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART enemy_dark_cultist           FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART enemy_ghoul                  FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART enemy_lich_lord              FINAL  true size=(384.0, 384.0) ph=(384.0, 384.0) OK
+ART enemy_skeleton_archer        FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART enemy_skeleton_warrior       FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART enemy_wraith                 FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART icon_block                   ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART icon_check                   ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+ART icon_energy                  ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART icon_gold                    ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART icon_hp                      ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART icon_lock                    ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART icon_pause                   ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART icon_settings                ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART icon_shard                   ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART intent_attack                ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART intent_buff                  ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART intent_debuff                ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART intent_defend                ph     false size=(64.0, 64.0) ph=(64.0, 64.0) OK
+ART logo                         FINAL  true size=(900.0, 300.0) ph=(900.0, 300.0) OK
+ART node_battle                  ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART node_boss                    ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART node_elite                   ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART node_merchant                ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART node_rest                    ph     false size=(128.0, 128.0) ph=(128.0, 128.0) OK
+ART player_knight                FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART player_mage                  FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART player_mage_locked           FINAL  true size=(256.0, 256.0) ph=(256.0, 256.0) OK
+ART relic_demon_skull            ph     false size=(96.0, 96.0) ph=(96.0, 96.0) OK
+ART relic_energy_crystal         ph     false size=(96.0, 96.0) ph=(96.0, 96.0) OK
+ART relic_gold_pouch             ph     false size=(96.0, 96.0) ph=(96.0, 96.0) OK
+ART relic_healing_flask          ph     false size=(96.0, 96.0) ph=(96.0, 96.0) OK
+ART relic_knights_heart          ph     false size=(96.0, 96.0) ph=(96.0, 96.0) OK
+ART relic_old_shield             ph     false size=(96.0, 96.0) ph=(96.0, 96.0) OK
+ART status_bastion               ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+ART status_poison                ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+ART status_strength              ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+ART status_strength_per_turn     ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+ART status_vulnerable            ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+ART status_weak                  ph     false size=(48.0, 48.0) ph=(48.0, 48.0) OK
+locked: res://assets/art/final/player_mage.svg sil=true
+ART_SUMMARY total=51 final=21 placeholder=30 bad=0

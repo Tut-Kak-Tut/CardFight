@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+<linearGradient id="bn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e866f"/><stop offset="0.45" stop-color="#f0ead8"/><stop offset="1" stop-color="#b9b199"/></linearGradient>
+<radialGradient id="eye" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe0c0"/><stop offset="0.4" stop-color="#e8402f"/><stop offset="1" stop-color="#a8322d" stop-opacity="0"/></radialGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="128" cy="222" rx="50" ry="6" fill="url(#gr)"/>
+<g stroke="#0a0b10" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- tail -->
+<path d="M150 190 Q184 196 184 168 Q184 156 196 158" stroke="#0a0b10" stroke-width="9" fill="none"/>
+<path d="M150 190 Q184 196 184 168 Q184 156 196 158" stroke="#e8e2d0" stroke-width="4" fill="none"/>
+<path d="M196 158 l10 -10 l2 14 Z" fill="url(#bn)" stroke-width="2.5"/>
+<!-- legs -->
+<path d="M114 172 L108 212 L96 214 L96 220 L122 220 L124 174 Z" fill="url(#bn)"/>
+<path d="M134 174 L140 212 L132 214 L132 220 L160 220 L150 172 Z" fill="url(#bn)"/>
+<circle cx="112" cy="196" r="4" fill="#e8e2d0" stroke-width="2"/>
+<circle cx="140" cy="196" r="4" fill="#e8e2d0" stroke-width="2"/>
+<!-- body -->
+<path d="M110 106 Q106 130 112 154 Q128 164 146 154 Q150 130 146 106 Z" fill="url(#bn)"/>
+<path d="M116 118 H142 M115 130 H143 M116 142 H142" stroke="#0a0b10" stroke-width="3"/>
+<path d="M128 108 V156" stroke="#8e866f" stroke-width="3"/>
+<ellipse cx="128" cy="160" rx="22" ry="12" fill="url(#bn)"/>
+<!-- arms -->
+<path d="M112 112 L90 134 L82 148" stroke="#0a0b10" stroke-width="10" fill="none"/>
+<path d="M112 112 L90 134 L82 148" stroke="url(#bn)" stroke-width="5" fill="none"/>
+<path d="M146 114 L166 122 L174 108" stroke="#0a0b10" stroke-width="10" fill="none"/>
+<path d="M146 114 L166 122 L174 108" stroke="url(#bn)" stroke-width="5" fill="none"/>
+<path d="M82 148 l-6 8 M82 148 l2 10 M174 108 l4 -8 M174 108 l8 2" stroke="#e8e2d0" stroke-width="3"/>
+<!-- horns -->
+<path d="M82 52 L66 16 L98 40 Z M174 52 L190 16 L158 40 Z" fill="url(#bn)" stroke-width="3"/>
+<!-- big skull -->
+<path d="M70 68 Q66 22 128 20 Q190 22 186 68 Q186 92 170 100 L166 112 H90 L86 100 Q70 92 70 68 Z" fill="url(#bn)"/>
+<path d="M96 112 V102 M110 112 V104 M124 112 V104 M138 112 V104 M152 112 V104" stroke="#0a0b10" stroke-width="2.5" fill="none"/>
+<path d="M84 64 Q96 52 114 66 L110 88 Q88 90 84 64 Z M144 66 Q162 52 174 64 Q170 90 148 88 Z" fill="#0a0b10"/>
+<path d="M122 90 L128 100 L134 90 Z" fill="#0a0b10" stroke-width="2.5"/>
+<path d="M150 26 L158 44 L148 52 M92 30 L98 40" stroke="#0a0b10" stroke-width="2" fill="none"/>
+</g>
+<circle cx="98" cy="72" r="10" fill="url(#eye)"/>
+<circle cx="160" cy="72" r="10" fill="url(#eye)"/>
+<path d="M82 36 Q74 56 76 76" stroke="#fff" stroke-width="2.5" fill="none" opacity="0.5"/>
+</svg>

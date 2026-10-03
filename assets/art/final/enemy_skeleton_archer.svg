@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+<linearGradient id="bn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e866f"/><stop offset="0.45" stop-color="#e8e2d0"/><stop offset="1" stop-color="#b9b199"/></linearGradient>
+<linearGradient id="hd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3f52"/><stop offset="1" stop-color="#14161f"/></linearGradient>
+<radialGradient id="eye" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff"/><stop offset="0.4" stop-color="#9fd0ff"/><stop offset="1" stop-color="#3b5a8a" stop-opacity="0"/></radialGradient>
+<radialGradient id="gr" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="128" cy="250" rx="60" ry="7" fill="url(#gr)"/>
+<g stroke="#0a0b10" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<!-- quiver -->
+<path d="M150 90 L172 76 L184 140 L160 150 Z" fill="#3a2a1a"/>
+<path d="M164 80 L160 58 M172 78 L172 54 M178 80 L184 58" stroke="#14161f" stroke-width="3"/>
+<path d="M160 58 l-4 -8 M172 54 l0 -8 M184 58 l4 -8" stroke="#a8322d" stroke-width="4"/>
+<path d="M156 110 L176 100 M158 126 L180 118" stroke="#6b4a2a" stroke-width="2.5"/>
+<!-- legs -->
+<path d="M112 176 L108 224 L116 246 H98 L96 252 H126 L124 176 Z" fill="url(#bn)"/>
+<path d="M134 176 L136 224 L142 246 H128 L126 252 H156 L150 176 Z" fill="url(#bn)"/>
+<path d="M106 202 H126 M134 202 H152" stroke="#0a0b10" stroke-width="2.5"/>
+<!-- torso -->
+<path d="M106 164 Q128 178 152 164 L148 178 Q128 188 110 178 Z" fill="url(#bn)"/>
+<path d="M108 90 Q104 140 112 166 L146 166 Q154 140 148 90 Z" fill="url(#bn)"/>
+<path d="M114 106 Q130 114 146 106 M112 122 Q130 130 148 122 M112 138 Q130 146 148 138 M114 154 Q130 160 146 154" stroke="#0a0b10" stroke-width="4" fill="none"/>
+<path d="M130 94 V164" stroke="#8e866f" stroke-width="4"/>
+<!-- ragged cloak -->
+<path d="M100 84 L152 84 L160 124 L150 118 L146 140 L136 122 L124 144 L116 120 L106 132 Z" fill="url(#hd)"/>
+<!-- arms: drawing string -->
+<path d="M110 98 L86 112 L66 108" stroke="#0a0b10" stroke-width="13" fill="none"/>
+<path d="M110 98 L86 112 L66 108" stroke="url(#bn)" stroke-width="8" fill="none"/>
+<path d="M148 100 L150 116 L116 118" stroke="#0a0b10" stroke-width="13" fill="none"/>
+<path d="M148 100 L150 116 L116 118" stroke="url(#bn)" stroke-width="8" fill="none"/>
+<circle cx="66" cy="108" r="6" fill="#e8e2d0"/>
+<circle cx="116" cy="118" r="6" fill="#e8e2d0"/>
+<!-- bow -->
+<path d="M52 20 Q16 108 52 216" stroke="#0a0b10" stroke-width="12" fill="none"/>
+<path d="M52 20 Q16 108 52 216" stroke="#8a6a3a" stroke-width="7" fill="none"/>
+<path d="M44 60 Q30 108 44 168" stroke="#c9a96a" stroke-width="2" fill="none"/>
+<path d="M52 20 L116 118 L52 216" stroke="#e8e2d0" stroke-width="1.8" fill="none"/>
+<path d="M60 108 H118" stroke="#6b4a2a" stroke-width="3"/>
+<path d="M54 108 l10 -5 v10 Z" fill="#cfd3dc" stroke-width="2"/>
+<path d="M114 108 l-8 -5 M114 108 l-8 5" stroke="#a8322d" stroke-width="3"/>
+<!-- skull + hood -->
+<path d="M94 58 Q92 20 128 16 Q164 20 160 60 L164 90 Q150 80 142 88 L112 88 Q104 80 90 92 Z" fill="url(#hd)"/>
+<path d="M104 56 Q104 32 126 30 Q146 32 148 56 Q148 70 140 76 L138 86 H114 L112 76 Q104 70 104 56 Z" fill="url(#bn)"/>
+<path d="M108 52 Q114 46 122 54 L120 66 Q108 66 108 52 Z M134 54 Q142 46 148 52 Q148 66 136 66 Z" fill="#0a0b10"/>
+<path d="M124 68 L128 74 L132 68 Z" fill="#0a0b10" stroke-width="2"/>
+<path d="M116 86 V78 M126 86 V78 M136 86 V78" stroke="#0a0b10" stroke-width="2.5" fill="none"/>
+</g>
+<circle cx="114" cy="57" r="7" fill="url(#eye)"/>
+<circle cx="141" cy="57" r="7" fill="url(#eye)"/>
+<path d="M98 40 Q94 56 96 72" stroke="#8aa0c0" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>

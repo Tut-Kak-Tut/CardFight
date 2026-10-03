@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920"><defs>
+<radialGradient id="g" cx="540" cy="520" r="900" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2d3347"/><stop offset="0.5" stop-color="#1d2030"/><stop offset="1" stop-color="#0d0e14"/></radialGradient>
+<radialGradient id="red" cx="540" cy="360" r="380" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#a8322d" stop-opacity="0.5"/><stop offset="1" stop-color="#a8322d" stop-opacity="0"/></radialGradient>
+<linearGradient id="pil" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0a0b11"/><stop offset="0.5" stop-color="#2a2d3c"/><stop offset="1" stop-color="#0a0b11"/></linearGradient>
+<linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#232638"/><stop offset="1" stop-color="#101119"/></linearGradient>
+<linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b5a8a" stop-opacity="0"/><stop offset="0.5" stop-color="#3b5a8a" stop-opacity="0.3"/><stop offset="1" stop-color="#3b5a8a" stop-opacity="0"/></linearGradient>
+<filter id="bl"><feGaussianBlur stdDeviation="16"/></filter>
+</defs>
+<rect width="1080" height="1920" fill="url(#g)"/>
+<rect width="1080" height="1920" fill="url(#red)"/>
+<g fill="#0a0b11"><path d="M300 1000 V470 Q300 330 540 330 Q780 330 780 470 V1000 Z" opacity="0.7"/></g>
+<g stroke="#0a0b11" stroke-width="3" fill="none" opacity="0.8"><path d="M300 560 H780 M300 700 H780 M300 840 H780 M420 330 V1000 M540 330 V1000 M660 330 V1000"/></g>
+<g><rect x="40" y="0" width="150" height="1060" fill="url(#pil)"/><rect x="890" y="0" width="150" height="1000" fill="url(#pil)"/>
+<rect x="25" y="1030" width="180" height="50" fill="#1d2030" stroke="#0a0b11" stroke-width="3"/><rect x="875" y="980" width="180" height="50" fill="#1d2030" stroke="#0a0b11" stroke-width="3"/>
+<path d="M40 640 L190 660 M40 300 L190 280 M890 520 L1040 540 M890 840 L1040 820" stroke="#0a0b11" stroke-width="4"/></g>
+<path d="M190 780 L170 830 L205 880 L190 940 L160 960 L200 1060 L40 1060 L40 780 Z" fill="#0a0b11" opacity="0.6"/>
+<path d="M0 1000 H1080 V1920 H0 Z" fill="url(#fl)"/>
+<g stroke="#0a0b11" stroke-width="4" fill="none"><path d="M0 1000 H1080 M0 1120 H1080 M0 1270 H1080 M0 1480 H1080 M0 1740 H1080"/><path d="M540 1000 V1920 M270 1000 L-160 1920 M810 1000 L1240 1920 M-0 1000 L-500 1920 M1080 1000 L1580 1920"/></g>
+<g stroke="#3b5a8a" stroke-width="2" opacity="0.35" fill="none"><path d="M120 1060 l40 20 l-10 40 M820 1180 l60 -10 l20 30 M430 1330 l50 20 l30 -20 M200 1560 l30 30"/></g>
+<g fill="#e8e2d0" opacity="0.55"><ellipse cx="90" cy="1060" rx="22" ry="12"/><circle cx="72" cy="1052" r="10"/><path d="M110 1070 l50 10" stroke="#e8e2d0" stroke-width="6" stroke-linecap="round"/><circle cx="960" cy="1020" r="14"/><path d="M930 1030 l-40 10" stroke="#e8e2d0" stroke-width="6" stroke-linecap="round"/><ellipse cx="260" cy="1110" rx="18" ry="8"/><path d="M240 1112 l-30 14 M280 1112 l30 10" stroke="#e8e2d0" stroke-width="5" stroke-linecap="round"/></g>
+<g filter="url(#bl)"><ellipse cx="540" cy="1040" rx="620" ry="60" fill="#3b5a8a" opacity="0.4"/><ellipse cx="300" cy="700" rx="360" ry="60" fill="#3b5a8a" opacity="0.18"/></g>
+<rect y="920" width="1080" height="200" fill="url(#mist)"/>
+<rect y="1100" width="1080" height="820" fill="#0a0b11" opacity="0.4"/>
+</svg>
