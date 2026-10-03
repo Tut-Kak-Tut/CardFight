@@ -1,6 +1,5 @@
 class_name PauseOverlay extends Control
 
-const ICON := "res://assets/art/placeholder/icon_pause.svg"
 
 signal closed
 
@@ -13,7 +12,7 @@ static func open(parent: Node) -> PauseOverlay:
 
 static func make_button(parent: Control, pos: Vector2) -> TextureButton:
 	var b := TextureButton.new()
-	b.texture_normal = load(ICON)
+	b.texture_normal = Art.tex("icon_pause")
 	b.ignore_texture_size = true
 	b.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	b.position = pos

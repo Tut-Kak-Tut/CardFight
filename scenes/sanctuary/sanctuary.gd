@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const GOLD := Color("#c9a24b")
 const RED := Color("#e05a4f")
 const GREEN := Color("#7ed957")
@@ -18,7 +17,7 @@ var _busy := false
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_sanctuary.svg")
+	bg.texture = Art.tex("bg_sanctuary")
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
@@ -51,7 +50,7 @@ func _ready() -> void:
 	back.pressed.connect(_back)
 	add_child(back)
 
-	_tex(self, ART + "icon_shard.svg", Vector2(440, 115), Vector2(56, 56))
+	_tex(self, "icon_shard", Vector2(440, 115), Vector2(56, 56))
 	balance_lbl = _label(self, "", 44, Color.WHITE, Vector2(505, 110), Vector2(300, 66))
 
 	msg = _label(self, "Not enough Soul Shards", 40, Color("#ff6b6b"), Vector2(140, 1780), Vector2(800, 70), HORIZONTAL_ALIGNMENT_CENTER)
@@ -93,15 +92,16 @@ func _label(parent: Control, text: String, size: int, color: Color, pos: Vector2
 	return lb
 
 
-func _tex(parent: Control, path: String, pos: Vector2, sz: Vector2) -> void:
+func _tex(parent: Control, art_name: String, pos: Vector2, sz: Vector2) -> TextureRect:
 	var t := TextureRect.new()
-	t.texture = load(path)
+	t.texture = Art.tex(art_name)
 	t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	t.position = pos
 	t.size = sz
 	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	parent.add_child(t)
+	return t
 
 
 func _open(kind: String, id: String) -> bool:
@@ -112,12 +112,12 @@ func _open(kind: String, id: String) -> bool:
 func _status(parent: Control, kind: String, id: String, center_x: float, y: float) -> void:
 	var m: Meta = MetaState.meta
 	if _open(kind, id):
-		_tex(parent, ART + "icon_check.svg", Vector2(center_x - 100, y + 4), Vector2(36, 36))
+		_tex(parent, "icon_check", Vector2(center_x - 100, y + 4), Vector2(36, 36))
 		_label(parent, "Unlocked", 30, GREEN, Vector2(center_x - 56, y), Vector2(160, 44))
 		return
 	var price := m.cost(kind, id)
 	var affordable := m.shards >= price
-	_tex(parent, ART + "icon_shard.svg", Vector2(center_x - 70, y + 4), Vector2(36, 36))
+	_tex(parent, "icon_shard", Vector2(center_x - 70, y + 4), Vector2(36, 36))
 	_label(parent, str(price), 32, GOLD if affordable else RED, Vector2(center_x - 26, y), Vector2(120, 44))
 	if not affordable:
 		parent.modulate = Color(1, 1, 1, 0.6)
@@ -158,10 +158,12 @@ func _refresh() -> void:
 		cell.custom_minimum_size = Vector2(1080, 300)
 		vbox.add_child(cell)
 		_plate(cell, Vector2(240, 0), Vector2(600, 300))
-		var path := ART + "player_%s.svg" % id
-		if not m.is_char_unlocked(id) and ResourceLoader.exists(ART + "player_%s_locked.svg" % id):
-			path = ART + "player_%s_locked.svg" % id
-		_tex(cell, path, Vector2(430, 0), Vector2(220, 220))
+		var pname := "player_%s" % id
+		if not m.is_char_unlocked(id):
+			pname += "_locked"
+		var ptex := _tex(cell, pname, Vector2(430, 0), Vector2(220, 220))
+		if Art.needs_silhouette(pname):
+			ptex.modulate = Color(0, 0, 0, 0.85)
 		_label(cell, str(ch.get("name", id)), 36, Color.WHITE, Vector2(240, 220), Vector2(600, 40), HORIZONTAL_ALIGNMENT_CENTER)
 		_status(cell, "char", id, 540.0, 255.0)
 		cell.gui_input.connect(_on_cell_input.bind("char", id))
@@ -220,7 +222,7 @@ func _on_pick(kind: String, id: String) -> void:
 	var yes: bool = await d.answered
 	_busy = false
 	if yes and MetaState.unlock(kind, id):
-		AudioManager.play("card_play")
+		AudioManager.play("shard")
 
 
 func _show_msg() -> void:

@@ -95,8 +95,7 @@ func set_card(c: Dictionary) -> void:
 	if _bg == null:
 		return
 	var type_str := str(c.get("type", "skill")).to_lower()
-	var path := "res://assets/art/placeholder/card_frame_%s.svg" % type_str
-	_bg.texture = load(path) if ResourceLoader.exists(path) else null
+	_bg.texture = Art.tex("card_frame_%s" % type_str)
 	_cost.text = str(c.get("cost", 0))
 	_name.text = str(c.get("name", ""))
 	var up = c.get("upgraded", false)

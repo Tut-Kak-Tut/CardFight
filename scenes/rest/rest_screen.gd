@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const CARD_SCENE := preload("res://scenes/ui/card_view.tscn")
 const TOP_BAR_SCENE := preload("res://scenes/ui/top_bar.tscn")
 
@@ -22,7 +21,7 @@ func _ready() -> void:
 		RunState.ensure_run()
 	run = RunState.run
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_rest.svg")
+	bg.texture = Art.tex("bg_rest")
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
@@ -77,6 +76,11 @@ func _ready() -> void:
 	AudioManager.play("campfire")
 
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		pass
+
+
 func _big_button(text: String, y: float) -> Button:
 	var b := Button.new()
 	b.text = text
@@ -109,6 +113,7 @@ func _on_rest(pct: int, amount: int) -> void:
 		if not yes:
 			return
 	var healed := run.heal(run.heal_pct(pct))
+	AudioManager.play("heal")
 	FloatingText.spawn(self, "+%d" % healed, Color(0.4, 0.9, 0.4), Vector2(480, 1180))
 	_finish("You feel rested.")
 
@@ -132,6 +137,7 @@ func _on_upgrade() -> void:
 	if not ok:
 		return
 	run.upgrade_card(idx)
+	AudioManager.play("upgrade")
 	_finish("%s upgraded." % str(card.get("name", "Card")))
 
 

@@ -2,7 +2,6 @@ class_name EnemyView extends Control
 
 signal tapped(view)
 
-const ART := "res://assets/art/placeholder/"
 
 var enemy = null
 
@@ -95,7 +94,7 @@ func _ready() -> void:
 	_block_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	vb.add_child(_block_box)
 	var bi := TextureRect.new()
-	bi.texture = load(ART + "icon_block.svg")
+	bi.texture = Art.tex("icon_block")
 	bi.custom_minimum_size = Vector2(40, 40)
 	bi.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bi.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -132,9 +131,9 @@ func set_enemy(e) -> void:
 		return
 	var id := str(e.id)
 	var s := Vector2(300, 300) if id == "lich_lord" else Vector2(256, 256)
-	var path := ART + "enemy_%s.svg" % id
-	var has_tex := ResourceLoader.exists(path)
-	_sprite.texture = load(path) if has_tex else null
+	var etex := Art.tex("enemy_%s" % id)
+	var has_tex := etex != null
+	_sprite.texture = etex
 	_sprite.visible = has_tex
 	_fallback.visible = not has_tex
 	for n in [_sprite, _fallback]:
@@ -171,7 +170,7 @@ func refresh(preview: Dictionary) -> void:
 			icon = "intent_buff"
 		"debuff":
 			icon = "intent_debuff"
-	_intent_icon.texture = load(ART + icon + ".svg") if icon != "" else null
+	_intent_icon.texture = Art.tex(icon) if icon != "" else null
 	var dmg := int(preview.get("damage", -1))
 	var times := int(preview.get("times", 1))
 	var dtxt := ("%dx%d" % [dmg, times]) if times > 1 else str(dmg)

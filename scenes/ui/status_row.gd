@@ -12,9 +12,7 @@ func set_statuses(st: Dictionary) -> void:
 		if v == 0:
 			continue
 		var tr := TextureRect.new()
-		var path := "res://assets/art/placeholder/status_%s.svg" % sname
-		if ResourceLoader.exists(path):
-			tr.texture = load(path)
+		tr.texture = Art.tex("status_%s" % sname)
 		tr.custom_minimum_size = Vector2(40, 40)
 		tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED

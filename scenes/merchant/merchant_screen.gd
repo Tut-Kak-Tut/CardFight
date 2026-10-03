@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const CARD_SCENE := preload("res://scenes/ui/card_view.tscn")
 const TOP_BAR_SCENE := preload("res://scenes/ui/top_bar.tscn")
 
@@ -17,7 +16,7 @@ func _ready() -> void:
 		RunState.ensure_run()
 	run = RunState.run
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_merchant.svg")
+	bg.texture = Art.tex("bg_merchant")
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
@@ -37,7 +36,7 @@ func _ready() -> void:
 	leave.add_theme_font_size_override("font_size", 44)
 	leave.position = Vector2(360, 1760)
 	leave.size = Vector2(360, 110)
-	leave.pressed.connect(func(): RunState.leave_node())
+	leave.pressed.connect(_leave)
 	add_child(leave)
 
 	overlay = DeckOverlay.new()
@@ -46,6 +45,15 @@ func _ready() -> void:
 	overlay.hide()
 
 	_refresh()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_leave()
+
+
+func _leave() -> void:
+	RunState.leave_node()
 
 
 func _on_deck_pressed() -> void:
@@ -71,7 +79,7 @@ func _label(parent: Control, text: String, size: int, color: Color, pos: Vector2
 func _price_row(parent: Control, price: int, center_x: float, y: float) -> void:
 	var col := Color("#ff6b6b") if run.gold < price else Color.WHITE
 	var icon := TextureRect.new()
-	icon.texture = load(ART + "icon_gold.svg")
+	icon.texture = Art.tex("icon_gold")
 	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	icon.size = Vector2(40, 40)
@@ -128,10 +136,10 @@ func _refresh() -> void:
 			_label(p, "SOLD", 30, Color(0.55, 0.55, 0.55), Vector2.ZERO, p.size, HORIZONTAL_ALIGNMENT_CENTER)
 			continue
 		var icon: Control
-		var path := ART + "relic_%s.svg" % entry["id"]
-		if ResourceLoader.exists(path):
+		var rtex := Art.tex("relic_%s" % entry["id"])
+		if rtex != null:
 			var tr := TextureRect.new()
-			tr.texture = load(path)
+			tr.texture = rtex
 			tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			tr.stretch_mode = TextureRect.STRETCH_SCALE
 			icon = tr
@@ -186,7 +194,7 @@ func _on_buy(view, kind: String, i: int) -> void:
 	if run.gold < price:
 		if view is CardView:
 			view.shake()
-		Input.vibrate_handheld(40)
+		AudioManager.vibrate()
 		return
 	var nm: String
 	if kind == "card":
@@ -204,6 +212,7 @@ func _on_buy(view, kind: String, i: int) -> void:
 	else:
 		run.add_relic(entry["id"])
 	entry["sold"] = true
+	AudioManager.play("gold")
 	RunState.mark_dirty()
 	_refresh()
 
@@ -227,6 +236,7 @@ func _on_remove() -> void:
 	if not yes or not run.spend(price):
 		return
 	run.remove_card(int(card["deck_index"]))
+	AudioManager.play("card_play")
 	RunState.shop["remove_used"] = true
 	RunState.mark_dirty()
 	_refresh()
@@ -252,5 +262,6 @@ func _on_heal() -> void:
 		return
 	run.heal(run.heal_pct(int(shop["heal_pct"])))
 	shop["heal_used"] = true
+	AudioManager.play("heal")
 	RunState.mark_dirty()
 	_refresh()

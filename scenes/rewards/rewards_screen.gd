@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const CARD_SCENE := preload("res://scenes/ui/card_view.tscn")
 const GOLD := Color("#c9a24b")
 
@@ -49,11 +48,12 @@ func _button(txt: String, size_px: int, pos: Vector2, sz: Vector2, cb: Callable)
 	return b
 
 
-func _icon(path: String, pos: Vector2, sz: Vector2, parent: Control) -> void:
-	if not ResourceLoader.exists(path):
+func _icon(art_name: String, pos: Vector2, sz: Vector2, parent: Control) -> void:
+	var t := Art.tex(art_name)
+	if t == null:
 		return
 	var tr := TextureRect.new()
-	tr.texture = load(path)
+	tr.texture = t
 	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	tr.position = pos
@@ -64,9 +64,9 @@ func _icon(path: String, pos: Vector2, sz: Vector2, parent: Control) -> void:
 
 func _build() -> void:
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_combat.svg")
+	bg.texture = Art.tex("bg_combat")
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	bg.stretch_mode = TextureRect.STRETCH_SCALE
+	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(bg)
@@ -118,7 +118,7 @@ func _rebuild() -> void:
 		gb.size = Vector2(700, 110)
 		gb.pressed.connect(_take_gold)
 		content.add_child(gb)
-		_icon(ART + "icon_gold.svg", Vector2(20, 15), Vector2(80, 80), gb)
+		_icon("icon_gold", Vector2(20, 15), Vector2(80, 80), gb)
 		_label("%d Gold" % int(r.get("gold", 0)), 40, Vector2(100, 0), Vector2(500, 110), GOLD, gb)
 
 	if not r.is_empty():
@@ -136,6 +136,7 @@ func _take_gold() -> void:
 	var r := RunState.reward
 	_run().gold += int(r.get("gold", 0))
 	r["gold_taken"] = true
+	AudioManager.play("gold")
 	RunState.mark_dirty()
 	top_bar.refresh(_run())
 	_rebuild()
@@ -174,6 +175,7 @@ func _on_take() -> void:
 		return
 	var idx := card_views.find(selected)
 	_run().add_card(str(RunState.reward["cards"][idx]))
+	AudioManager.play("card_play")
 	RunState.reward["card_done"] = true
 	RunState.reward["card_msg"] = "Card added: %s" % str(selected.card.get("name", ""))
 	RunState.mark_dirty()
@@ -220,7 +222,7 @@ func _build_relics(r: Dictionary) -> void:
 		b.size = Vector2(900, 100)
 		b.pressed.connect(_on_relic.bind(id))
 		content.add_child(b)
-		_icon(ART + "relic_%s.svg" % id, Vector2(10, 10), Vector2(80, 80), b)
+		_icon("relic_%s" % id, Vector2(10, 10), Vector2(80, 80), b)
 		var nm := _label(str(relic.get("name", id)), 28, Vector2(100, 5), Vector2(780, 45), GOLD, b)
 		nm.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 		var tx := _label(str(relic.get("text", "")), 22, Vector2(100, 50), Vector2(780, 40), Color.WHITE, b)
@@ -229,6 +231,7 @@ func _build_relics(r: Dictionary) -> void:
 
 func _on_relic(id: String) -> void:
 	_run().add_relic(id)
+	AudioManager.play("upgrade")
 	RunState.reward["relic_done"] = true
 	RunState.mark_dirty()
 	top_bar.refresh(_run())
@@ -262,6 +265,11 @@ func _build_confirm() -> void:
 	no.size = Vector2(280, 100)
 	no.pressed.connect(func(): confirm_popup.visible = false)
 	panel.add_child(no)
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		pass
 
 
 func _on_continue() -> void:

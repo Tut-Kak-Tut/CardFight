@@ -62,6 +62,7 @@ GODOT="C:/Users/Vova/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEn
 "$GODOT" --headless --path . -s tests/run_tests.gd   # тести (exit code 0 = ок)
 "$GODOT" --path .                               # запуск гри (вікно 540x960)
 "$GODOT" -e --path .                            # редактор
+"$GODOT" --headless --path . --export-debug "Android" build/CardFight.apk   # debug APK (docs/android.md)
 ```
 
 ## Етапи
@@ -110,5 +111,16 @@ GODOT="C:/Users/Vova/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEn
 → tester (оболонка, save/load, мета) → balancer (за потреби: shards, Mage)
 
 ### Етап 4 — Арт, звук, Android
-Промпти/арт від designer, інтеграція, звук, Android-експорт (API 24+), тест на телефоні, safe-area.
+Мета: гра підхоплює фінальний арт з `assets/art/final/` (фолбек на плейсхолдери); реальні згенеровані звуки і музика; APK для Android (API 24+), safe-area, кнопка «Назад».
+Хвиля A (паралельно):
+- D-005 Промпти фінального арту → `docs/art-prompts.md` (designer)
+- T-026 Art-лоадер: final PNG → фолбек SVG, заміна шляхів у 15 файлах (sonnet)
+- T-027 Генератор звуку (SFX + музичні лупи) → `assets/audio/*.wav` (sonnet)
+- T-028 Android: SDK, export templates, keystore, `export_presets.cfg`, збірка APK (sonnet)
+Хвиля B (паралельно) ← T-026, T-027, T-028:
+- T-029 Звукові хуки (нові SFX у бою, нагородах, торговці, результаті) (sonnet)
+- T-030 Мобільне: safe-area, кнопка «Назад», вібро через AudioManager (sonnet)
+→ tester (десктоп) → замовник: APK на телефоні + генерація арту за промптами
+Хвиля C ← арт від замовника:
+- T-031 Підгонка фінального арту (масштаб/кадрування) за потреби
 → tester → фінальний баланс

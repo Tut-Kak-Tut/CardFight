@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const SWIPE_MIN := 120.0
 
 var _ids: Array = []
@@ -119,17 +118,11 @@ func _refresh() -> void:
 		return
 	var id: String = c["id"]
 	var open := _is_open(id)
-	var tex: Texture2D = null
+	var pname := "player_%s" % id if open else "player_%s_locked" % id
 	_portrait.modulate = Color.WHITE
-	if not open and ResourceLoader.exists(ART + "player_%s_locked.svg" % id):
-		tex = load(ART + "player_%s_locked.svg" % id)
-	else:
-		if ResourceLoader.exists(ART + "player_%s.svg" % id):
-			tex = load(ART + "player_%s.svg" % id)
-		if not open:
-			_portrait.modulate = Color(1, 1, 1, 1) * 0.1
-			_portrait.modulate.a = 1.0
-	_portrait.texture = tex
+	if not open and Art.needs_silhouette(pname):
+		_portrait.modulate = Color(0, 0, 0, 0.85)
+	_portrait.texture = Art.tex(pname)
 	_name.text = str(c.get("name", id))
 	_stats.text = "HP %d  ·  Energy %d" % [int(c.get("max_hp", 0)), int(c.get("energy", GameData.balance.get("energy_per_turn", 3)))]
 	for d in _dots.get_children():
@@ -146,7 +139,7 @@ func _refresh() -> void:
 		_action.disabled = false
 	else:
 		_action.text = "Unlock in Sanctuary · %d" % MetaState.meta.cost("char", id)
-		_action.icon = load(ART + "icon_lock.svg")
+		_action.icon = Art.tex("icon_lock")
 		_action.disabled = true
 
 

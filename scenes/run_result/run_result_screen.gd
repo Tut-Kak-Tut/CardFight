@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const GOLD := Color("#c9a24b")
 
 
@@ -11,9 +10,9 @@ func _ready() -> void:
 		return
 	var run: Run = RunState.run
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_combat.svg")
+	bg.texture = Art.tex("bg_combat")
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	bg.stretch_mode = TextureRect.STRETCH_SCALE
+	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(bg)
@@ -34,6 +33,9 @@ func _ready() -> void:
 	_label("Soul Shards earned: %d" % run.soul_shards(), 40, 1150, 60, GOLD)
 
 	_label("Total Soul Shards: %d" % MetaState.meta.shards, 32, 1220, 50, Color.WHITE)
+	AudioManager.play("victory" if won else "defeat")
+	if run.soul_shards() > 0:
+		get_tree().create_timer(0.6).timeout.connect(func(): AudioManager.play("shard"))
 	_button("Continue", 1450, _on_continue)
 	_button("Sanctuary", 1600, _on_sanctuary)
 
@@ -58,6 +60,11 @@ func _label(txt: String, size_px: int, y: float, h: float, color: Color) -> void
 	lb.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lb.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	add_child(lb)
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		pass
 
 
 func _on_continue() -> void:

@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const HAND_BOTTOM_Y := 1460.0
 const PLAY_LINE_Y := 1350.0
 
@@ -100,9 +99,9 @@ func _label(txt: String, size_px: int, pos: Vector2, sz: Vector2) -> Label:
 	return lb
 
 
-func _icon(path: String, pos: Vector2, sz: Vector2) -> TextureRect:
+func _icon(art_name: String, pos: Vector2, sz: Vector2) -> TextureRect:
 	var tr := TextureRect.new()
-	tr.texture = load(path)
+	tr.texture = Art.tex(art_name)
 	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	tr.position = pos
@@ -113,7 +112,7 @@ func _icon(path: String, pos: Vector2, sz: Vector2) -> TextureRect:
 
 func _build_ui() -> void:
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_combat.svg")
+	bg.texture = Art.tex("bg_combat")
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
@@ -121,7 +120,7 @@ func _build_ui() -> void:
 	add_child(bg)
 
 	# Player
-	player_sprite = _icon(ART + "player_%s.svg" % character_id, Vector2(412, 700), Vector2(256, 256))
+	player_sprite = _icon("player_%s" % character_id, Vector2(412, 700), Vector2(256, 256))
 	add_child(player_sprite)
 	hp_bar = ProgressBar.new()
 	hp_bar.position = Vector2(340, 970)
@@ -149,7 +148,7 @@ func _build_ui() -> void:
 	block_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(block_box)
 	var bi := TextureRect.new()
-	bi.texture = load(ART + "icon_block.svg")
+	bi.texture = Art.tex("icon_block")
 	bi.custom_minimum_size = Vector2(44, 44)
 	bi.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bi.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -173,7 +172,7 @@ func _build_ui() -> void:
 	circle.size = Vector2(120, 120)
 	circle.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(circle)
-	circle.add_child(_icon(ART + "icon_energy.svg", Vector2.ZERO, Vector2(120, 120)))
+	circle.add_child(_icon("icon_energy", Vector2.ZERO, Vector2(120, 120)))
 	energy_label = _label("", 48, Vector2.ZERO, Vector2(120, 120))
 	energy_label.add_theme_constant_override("outline_size", 8)
 	energy_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -299,6 +298,8 @@ func refresh() -> void:
 	if state.result != "":
 		result_label.text = "Victory" if state.result == "win" else "Defeat"
 		rb.text = "Continue" if (state.result == "win" or in_run) else "Restart"
+		if not result_overlay.visible:
+			AudioManager.play("victory" if state.result == "win" else "defeat")
 		result_overlay.visible = true
 
 
@@ -383,7 +384,7 @@ func _on_card_tapped(view: CardView) -> void:
 	var card: Dictionary = view.card
 	if int(card.cost) > state.energy:
 		view.shake()
-		Input.vibrate_handheld(40)
+		AudioManager.vibrate()
 		return
 	if card.get("target", "none") == "enemy":
 		selected_uid = int(card.uid)
@@ -517,7 +518,9 @@ func _on_event(kind: String, data: Dictionary) -> void:
 			var blocked := int(data.get("blocked", 0))
 			FloatingText.spawn(self, "-%d" % amount, Color(1, 0.25, 0.25), pos)
 			if amount > 0:
-				AudioManager.play("hit")
+				AudioManager.play("enemy_attack" if t == state.player else "hit")
+			elif blocked > 0:
+				AudioManager.play("block")
 			if blocked > 0:
 				FloatingText.spawn(self, "-%d" % blocked, Color(0.35, 0.6, 1.0), pos + Vector2(70, 30))
 			var i := state.enemies.find(t)
@@ -528,5 +531,15 @@ func _on_event(kind: String, data: Dictionary) -> void:
 		"block":
 			AudioManager.play("block")
 			FloatingText.spawn(self, "+%d" % int(data.amount), Color(0.35, 0.6, 1.0), _target_pos(data.target))
+		"status":
+			var st := str(data.get("status", ""))
+			if st == "poison":
+				AudioManager.play("poison")
+			elif st in ["strength", "strength_per_turn", "bastion"]:
+				AudioManager.play("buff")
+		"draw":
+			if int(data.get("count", 0)) > 0:
+				AudioManager.play("card_draw")
 		"heal":
+			AudioManager.play("heal")
 			FloatingText.spawn(self, "+%d" % int(data.amount), Color(0.4, 0.9, 0.4), _target_pos(data.target))

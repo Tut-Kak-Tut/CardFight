@@ -1,6 +1,5 @@
 extends Control
 
-const ART := "res://assets/art/placeholder/"
 const LAYER_H := 240
 const TOP_H := 120
 const VIEW_H := 1800
@@ -24,7 +23,7 @@ func _ready() -> void:
 		return
 
 	var bg := TextureRect.new()
-	bg.texture = load(ART + "bg_map.svg")
+	bg.texture = Art.tex("bg_map")
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
@@ -104,7 +103,7 @@ func _add_node(parent: Control, n: Dictionary, p: Vector2, avail: Array[int]) ->
 	var id := int(n["id"])
 	var s := 180.0 if n["type"] == "boss" else 140.0
 	var b := TextureButton.new()
-	b.texture_normal = load(ART + "node_%s.svg" % n["type"])
+	b.texture_normal = Art.tex("node_%s" % n["type"])
 	b.ignore_texture_size = true
 	b.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	b.size = Vector2(s, s)
@@ -120,7 +119,7 @@ func _add_node(parent: Control, n: Dictionary, p: Vector2, avail: Array[int]) ->
 		b.modulate = Color("#8a8f9c")
 		b.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var ck := TextureRect.new()
-		ck.texture = load(ART + "icon_check.svg")
+		ck.texture = Art.tex("icon_check")
 		ck.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		ck.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		ck.size = Vector2(48, 48)

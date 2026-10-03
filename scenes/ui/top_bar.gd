@@ -56,11 +56,11 @@ func _on_deck_pressed() -> void:
 
 
 func _add_icon(row: Control, icon_name: String, letter: String) -> void:
-	var path := "res://assets/art/placeholder/%s.svg" % icon_name
+	var itex := Art.tex(icon_name)
 	var ctl: Control
-	if ResourceLoader.exists(path):
+	if itex != null:
 		var tr := TextureRect.new()
-		tr.texture = load(path)
+		tr.texture = itex
 		tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		ctl = tr

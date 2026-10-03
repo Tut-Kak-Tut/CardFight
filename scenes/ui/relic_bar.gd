@@ -15,11 +15,11 @@ func set_relics(ids: Array, data) -> void:
 		c.queue_free()
 	for id in ids:
 		var relic: Dictionary = data.get_relic(id) if data else {}
-		var path := "res://assets/art/placeholder/relic_%s.svg" % id
+		var rtex := Art.tex("relic_%s" % id)
 		var icon: Control
-		if ResourceLoader.exists(path):
+		if rtex != null:
 			var tr := TextureRect.new()
-			tr.texture = load(path)
+			tr.texture = rtex
 			tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			tr.stretch_mode = TextureRect.STRETCH_SCALE
 			icon = tr

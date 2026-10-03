@@ -1,6 +1,7 @@
 extends Node
 
-const SFX := ["hit", "block", "card_play", "ui_click", "campfire"]
+const SFX := ["hit", "block", "card_play", "ui_click", "campfire", "enemy_attack", "heal", "gold",
+	"card_draw", "upgrade", "victory", "defeat", "shard", "poison", "buff"]
 const MUSIC := ["ambient_menu", "ambient_combat", "boss"]
 
 var _sfx_players: Array[AudioStreamPlayer] = []
@@ -69,6 +70,10 @@ func play_music(id: String) -> void:
 		return
 	if s is AudioStreamOggVorbis:
 		s.loop = true
+	elif s is AudioStreamWAV:
+		s.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		s.loop_begin = 0
+		s.loop_end = s.data.size() / 2
 	_music_player.stream = s
 	_music_player.play()
 

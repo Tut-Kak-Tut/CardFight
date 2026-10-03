@@ -1,5 +1,6 @@
 .godot/
-export_presets.cfg
 build/
 *.apk
 *.aab
+*.keystore
+*.idsig
