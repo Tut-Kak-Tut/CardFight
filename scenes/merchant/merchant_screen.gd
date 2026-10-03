@@ -204,6 +204,7 @@ func _on_buy(view, kind: String, i: int) -> void:
 	else:
 		run.add_relic(entry["id"])
 	entry["sold"] = true
+	RunState.mark_dirty()
 	_refresh()
 
 
@@ -227,6 +228,7 @@ func _on_remove() -> void:
 		return
 	run.remove_card(int(card["deck_index"]))
 	RunState.shop["remove_used"] = true
+	RunState.mark_dirty()
 	_refresh()
 
 
@@ -250,4 +252,5 @@ func _on_heal() -> void:
 		return
 	run.heal(run.heal_pct(int(shop["heal_pct"])))
 	shop["heal_used"] = true
+	RunState.mark_dirty()
 	_refresh()

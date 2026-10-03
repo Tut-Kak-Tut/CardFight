@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.341 - Forward Mobile - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3050 Laptop GPU
+
+[m] SIM knight: runs=60 wins=8 (13%) avg shards=52.9
+[m] SIM knight deaths: { "boss@L9": 32, "enc [\"lich_lord\"]": 32, "elite@L3": 2, "enc [\"bone_golem\"]": 9, "battle@L7": 4, "enc [\"ghoul\", \"wraith\"]": 1, "elite@L5": 3, "battle@L6": 5, "enc [\"wraith\", \"dark_cultist\"]": 3, "enc [\"skeleton_warrior\", \"dark_cultist\"]": 1, "enc [\"skeleton_warrior\", \"wraith\"]": 3, "enc [\"wraith\", \"skeleton_archer\"]": 1, "elite@L7": 3, "enc [\"bone_minion\", \"dark_cultist\", \"skeleton_archer\"]": 2, "elite@L4": 1, "battle@L8": 2 }
+[m] SIM knight sample run: ["battle L0 [\"skeleton_warrior\", \"skeleton_archer\"] hp 80->64", "battle L1 [\"dark_cultist\"] hp 64->59", "elite L3 [\"bone_golem\"] hp 80->42", "battle L5 [\"wraith\", \"dark_cultist\"] hp 70->47", "battle L7 [\"wraith\", \"skeleton_archer\"] hp 47->28", "boss L9 [\"lich_lord\"] hp 56->0"]
+[m] SIM mage: runs=60 wins=0 (0%) avg shards=33.4
+[m] SIM mage deaths: { "battle@L5": 3, "enc [\"bone_minion\", \"dark_cultist\", \"skeleton_archer\"]": 4, "boss@L9": 14, "enc [\"lich_lord\"]": 14, "elite@L3": 5, "enc [\"bone_golem\"]": 23, "battle@L4": 6, "enc [\"skeleton_warrior\", \"wraith\"]": 6, "battle@L6": 4, "battle@L8": 5, "enc [\"ghoul\", \"wraith\"]": 5, "elite@L5": 10, "elite@L7": 2, "elite@L4": 4, "battle@L3": 1, "battle@L7": 3, "enc [\"wraith\", \"dark_cultist\"]": 4, "enc [\"ghoul\", \"skeleton_archer\"]": 2, "battle@L2": 1, "enc [\"skeleton_warrior\", \"skeleton_archer\"]": 1, "elite@L6": 2, "enc [\"ghoul\", \"dark_cultist\"]": 1 }
+[m] SIM mage sample run: ["battle L0 [\"skeleton_warrior\", \"skeleton_archer\"] hp 60->41", "battle L1 [\"skeleton_warrior\", \"skeleton_archer\"] hp 41->19", "elite L3 [\"bone_golem\"] hp 40->2", "battle L5 [\"bone_minion\", \"dark_cultist\", \"skeleton_archer\"] hp 23->0"]
+DRIVE DONE m

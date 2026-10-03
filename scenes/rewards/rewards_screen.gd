@@ -136,6 +136,7 @@ func _take_gold() -> void:
 	var r := RunState.reward
 	_run().gold += int(r.get("gold", 0))
 	r["gold_taken"] = true
+	RunState.mark_dirty()
 	top_bar.refresh(_run())
 	_rebuild()
 
@@ -175,6 +176,7 @@ func _on_take() -> void:
 	_run().add_card(str(RunState.reward["cards"][idx]))
 	RunState.reward["card_done"] = true
 	RunState.reward["card_msg"] = "Card added: %s" % str(selected.card.get("name", ""))
+	RunState.mark_dirty()
 	top_bar.refresh(_run())
 	_rebuild()
 
@@ -183,6 +185,7 @@ func _on_skip(skip_gold: int) -> void:
 	_run().gold += skip_gold
 	RunState.reward["card_done"] = true
 	RunState.reward["card_msg"] = "Skipped"
+	RunState.mark_dirty()
 	top_bar.refresh(_run())
 	_rebuild()
 
@@ -227,6 +230,7 @@ func _build_relics(r: Dictionary) -> void:
 func _on_relic(id: String) -> void:
 	_run().add_relic(id)
 	RunState.reward["relic_done"] = true
+	RunState.mark_dirty()
 	top_bar.refresh(_run())
 	_rebuild()
 

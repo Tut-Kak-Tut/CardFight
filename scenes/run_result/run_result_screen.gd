@@ -7,8 +7,7 @@ const GOLD := Color("#c9a24b")
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	if RunState.run == null:
-		RunState.new_run()
-		SceneRouter.goto("map")
+		SceneRouter.goto("main_menu")
 		return
 	var run: Run = RunState.run
 	var bg := TextureRect.new()
@@ -34,12 +33,18 @@ func _ready() -> void:
 		_label(lines[i], 32, 650 + i * 60, 50, Color.WHITE)
 	_label("Soul Shards earned: %d" % run.soul_shards(), 40, 1150, 60, GOLD)
 
+	_label("Total Soul Shards: %d" % MetaState.meta.shards, 32, 1220, 50, Color.WHITE)
+	_button("Continue", 1450, _on_continue)
+	_button("Sanctuary", 1600, _on_sanctuary)
+
+
+func _button(txt: String, y: float, cb: Callable) -> void:
 	var b := Button.new()
-	b.text = "Continue"
+	b.text = txt
 	b.add_theme_font_size_override("font_size", 44)
-	b.position = Vector2(340, 1450)
-	b.size = Vector2(400, 120)
-	b.pressed.connect(_on_continue)
+	b.position = Vector2(190, y)
+	b.size = Vector2(700, 120)
+	b.pressed.connect(cb)
 	add_child(b)
 
 
@@ -56,5 +61,10 @@ func _label(txt: String, size_px: int, y: float, h: float, color: Color) -> void
 
 
 func _on_continue() -> void:
-	RunState.new_run(RunState.run.character_id)
-	SceneRouter.goto("map")
+	RunState.run = null
+	SceneRouter.goto("character_select")
+
+
+func _on_sanctuary() -> void:
+	RunState.run = null
+	SceneRouter.goto("sanctuary")

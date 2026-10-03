@@ -95,8 +95,19 @@ GODOT="C:/Users/Vova/AppData/Local/Microsoft/WinGet/Packages/GodotEngine.GodotEn
 → tester (+ симуляція повного забігу) → balancer (бос, економіка)
 
 ### Етап 3 — Мета і оболонка
-Main Menu, Character Select, Sanctuary + MetaState, SaveManager (автозбереження), Pause/Settings, звук-заглушки.
-→ tester
+Мета: F5 → Main Menu → Character Select → забіг → Run Result → Sanctuary; Soul Shards і відкриття зберігаються назавжди; забіг автозберігається і продовжується кнопкою Continue; Pause/Settings; звук-заглушки.
+Хвиля A (паралельно):
+- T-018 Meta (core) + MetaState + SaveManager autoload + тести (sonnet)
+- D-003 Арт: фон меню/святилища, Soul Shard, замок, шестерня/пауза, логотип (designer)
+Хвиля B (паралельно) ← T-018:
+- T-019 AudioManager (звук-заглушки, вібро) + SettingsOverlay (sonnet)
+- T-020 Інтеграція: RunState ↔ MetaState/SaveManager, автозбереження, Continue, нові маршрути (sonnet)
+Хвиля C (паралельно) ← T-019, T-020, D-003:
+- T-021 Main Menu (sonnet)
+- T-022 Character Select (sonnet)
+- T-023 Sanctuary (sonnet)
+- T-024 Pause overlay у Map/Combat + звукові хуки бою (sonnet)
+→ tester (оболонка, save/load, мета) → balancer (за потреби: shards, Mage)
 
 ### Етап 4 — Арт, звук, Android
 Промпти/арт від designer, інтеграція, звук, Android-експорт (API 24+), тест на телефоні, safe-area.

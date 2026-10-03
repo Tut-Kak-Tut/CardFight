@@ -1,0 +1,63 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.341 - Forward Mobile - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3050 Laptop GPU
+
+[p1] --- MAIN MENU ---
+[p1] shot menu
+[p1] buttons: ["New Run", "Sanctuary", "Settings"]
+[p1] logo tex size=(900.0, 300.0) rect=[P: (0.0, 250.0), S: (1080.0, 300.0)]
+[p1] menu scene=MainMenu paused=false shards=0 run=null
+[p1] FILE meta.json ABSENT
+[p1] FILE run.json ABSENT
+[p1] shot settings
+[p1] toggle 'Sound' pressed=true
+[p1] toggle 'Vibration' pressed=true
+[p1] shot settings_off
+[p1] FILE meta.json (115 B): {"awarded_runs":[],"settings":{"sound":false,"vibration":false},"shards":0,"unlocked_cards":[],"unlocked_chars":[]}
+[p1] FILE run.json ABSENT
+[p1] --- NEW RUN / CHAR SELECT ---
+[p1] scene=CharacterSelect btns=["View Deck", "<", ">", "Begin", "Back"]
+[p1] shot character_select
+[p1] mage page: btns=["View Deck", "<", ">", "Unlock in Sanctuary · 150(dis)", "Back"]
+[p1] shot character_mage_locked
+[p1] after pressing locked action: scene=CharacterSelect run=<null>
+[p1] shot character_mage_deck
+[p1] back on knight, btns=["View Deck", "<", ">", "Begin", "Back"]
+[p1] after swipe left: page=1 btns=["View Deck", "<", ">", "Unlock in Sanctuary · 150(dis)", "Back"]
+[p1] shot character_knight_deck
+[p1] after Begin scene=MapScreen paused=false shards=0 run: char=knight hp=80/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=-1 result='' layers=0 screen=map
+[p1] shot map
+[p1] FILE meta.json (115 B): {"awarded_runs":[],"settings":{"sound":false,"vibration":false},"shards":0,"unlocked_cards":[],"unlocked_chars":[]}
+[p1] FILE run.json (2313 B)
+[p1] --- PAUSE ON MAP ---
+[p1] pause btn rect=[P: (970.0, 128.0), S: (100.0, 100.0)]
+[p1] shot pause_map
+[p1] paused=true btns=["Deck 10", "Resume", "Settings", "Abandon Run", "Main Menu"]
+[p1] shot pause_settings
+[p1] after resume paused=false
+[p1] scene=MainMenu btns=["Continue", "New Run", "Sanctuary", "Settings"]
+[p1] menu after pause->menu scene=MainMenu paused=false shards=0 run: char=knight hp=80/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=-1 result='' layers=0 screen=map
+[p1] shot menu_with_continue
+[p1] FILE meta.json (115 B): {"awarded_runs":[],"settings":{"sound":false,"vibration":false},"shards":0,"unlocked_cards":[],"unlocked_chars":[]}
+[p1] FILE run.json (2313 B)
+[p1] after Continue scene=MapScreen paused=false shards=0 run: char=knight hp=80/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=-1 result='' layers=0 screen=map
+[p1] --- ENTER BATTLE ---
+[p1] node btn: @TextureButton@287:<TextureButton#81654711818>
+[p1] combat start scene=CombatScreen paused=false shards=0 run: char=knight hp=80/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=0 result='' layers=0 screen=combat
+[p1] shot combat
+[p1] combat pause btn rect=[P: (970.0, 20.0), S: (100.0, 100.0)]
+[p1] shot pause_combat
+[p1] combat resumed paused=false
+[p1] combat after 1 card: hand=4 energy=2 enemyhp=[16]
+[p1] after continue mid-combat: scene=CombatScreen hand=5 energy=3 enemyhp=[22]
+[p1] combat result=win php=78
+[p1] shot combat_result
+[p1] rewards scene=RewardsScreen paused=false shards=0 run: char=knight hp=78/80 gold=50 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=0 result='' layers=0 screen=rewards
+[p1] shot rewards
+[p1] gold taken scene=RewardsScreen paused=false shards=0 run: char=knight hp=78/80 gold=72 deck=10 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry"] relics=[] node=0 result='' layers=0 screen=rewards
+[p1] card taken scene=RewardsScreen paused=false shards=0 run: char=knight hp=78/80 gold=72 deck=11 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry", "double_strike"] relics=[] node=0 result='' layers=0 screen=rewards
+[p1] shot rewards_done
+[p1] map after reward scene=MapScreen paused=false shards=0 run: char=knight hp=78/80 gold=72 deck=11 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry", "double_strike"] relics=[] node=0 result='' layers=1 screen=map
+[p1] FILE meta.json (115 B): {"awarded_runs":[],"settings":{"sound":false,"vibration":false},"shards":0,"unlocked_cards":[],"unlocked_chars":[]}
+[p1] FILE run.json (2606 B)
+[p1] SNAPSHOT saved; quitting
+DRIVE DONE p1

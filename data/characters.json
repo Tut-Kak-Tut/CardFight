@@ -23,7 +23,7 @@
     {
       "id": "mage",
       "name": "Mage",
-      "max_hp": 60,
+      "max_hp": 70,
       "energy": 3,
       "description": "Fire, poison and arcane tricks.",
       "deck": [

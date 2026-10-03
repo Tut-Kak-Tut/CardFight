@@ -35,7 +35,6 @@ var zoom_overlay: Control
 
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	_build_ui()
 	in_run = RunState.run != null and not RunState.pending.is_empty()
 	var seed_value := randi()
 	if in_run:
@@ -45,6 +44,7 @@ func _ready() -> void:
 	elif encounter.is_empty():
 		var pool: Array = GameData.encounters.get("normal_late", [])
 		encounter = pool[randi() % pool.size()]
+	_build_ui()
 	var ch := GameData.get_character(character_id)
 	var player := Combatant.new()
 	player.id = character_id
@@ -71,6 +71,19 @@ func _ready() -> void:
 	if in_run:
 		EffectResolver.resolve(RunState.run.relic_effects("combat_start"), state.player, null, state)
 	refresh()
+	PauseOverlay.make_button(self, Vector2(970, 20)).pressed.connect(_open_pause)
+	get_tree().set_quit_on_go_back(false)
+	AudioManager.play_music("boss" if str(RunState.pending.get("kind", "")) == "boss" else "ambient_combat")
+
+
+func _open_pause() -> void:
+	if not get_tree().paused:
+		PauseOverlay.open(self)
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_open_pause()
 
 
 # ---------- UI build ----------
@@ -399,6 +412,7 @@ func _on_enemy_tapped(view: EnemyView) -> void:
 func _play(hand_index: int, target_index: int) -> void:
 	selected_uid = -1
 	if state.play_card(hand_index, target_index):
+		AudioManager.play("card_play")
 		refresh()
 	else:
 		_layout_hand()
@@ -502,14 +516,17 @@ func _on_event(kind: String, data: Dictionary) -> void:
 			var amount := int(data.amount)
 			var blocked := int(data.get("blocked", 0))
 			FloatingText.spawn(self, "-%d" % amount, Color(1, 0.25, 0.25), pos)
+			if amount > 0:
+				AudioManager.play("hit")
 			if blocked > 0:
 				FloatingText.spawn(self, "-%d" % blocked, Color(0.35, 0.6, 1.0), pos + Vector2(70, 30))
 			var i := state.enemies.find(t)
 			if i >= 0:
 				enemy_views[i].flash_hit()
 			elif t == state.player and amount > 0:
-				Input.vibrate_handheld(60)
+				AudioManager.vibrate()
 		"block":
+			AudioManager.play("block")
 			FloatingText.spawn(self, "+%d" % int(data.amount), Color(0.35, 0.6, 1.0), _target_pos(data.target))
 		"heal":
 			FloatingText.spawn(self, "+%d" % int(data.amount), Color(0.4, 0.9, 0.4), _target_pos(data.target))

@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.341 - Forward Mobile - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3050 Laptop GPU
+
+[p4] after cold Continue (expect combat) scene=CombatScreen paused=false shards=0 run: char=knight hp=78/80 gold=245 deck=12 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry", "double_strike", "dodge"] relics=[] node=2 result='' layers=2 screen=combat
+[p4] hand=5 energy=3 enemyhp=[30, 22] php=78
+[p4] result win
+[p4] map after 1 win scene=MapScreen paused=false shards=0 run: char=knight hp=52/80 gold=269 deck=12 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry", "double_strike", "dodge"] relics=[] node=2 result='' layers=3 screen=map
+[p4] shot abandon_confirm
+[p4] run result scene=RunResultScreen paused=false shards=15 run: char=knight hp=52/80 gold=269 deck=12 ["strike", "strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend", "battle_cry", "double_strike", "dodge"] relics=[] node=2 result='defeat' layers=3 screen=map
+[p4] shot run_result
+[p4] label: Defeat
+[p4] label: Floors cleared: 3
+[p4] label: Battles won: 2
+[p4] label: Elites defeated: 0
+[p4] label: Soul Shards earned: 15
+[p4] label: Total Soul Shards: 15
+[p4] FILE meta.json (126 B): {"awarded_runs":[2248782444],"settings":{"sound":false,"vibration":false},"shards":15,"unlocked_cards":[],"unlocked_chars":[]}
+[p4] FILE run.json ABSENT
+[p4] btns=["Continue", "Sanctuary"]
+[p4] second finish_run attempt (should not double award)
+[p4] FILE meta.json (126 B): {"awarded_runs":[2248782444],"settings":{"sound":false,"vibration":false},"shards":15,"unlocked_cards":[],"unlocked_chars":[]}
+[p4] FILE run.json ABSENT
+[p4] scene=Sanctuary
+[p4] sanctuary scene=Sanctuary paused=false shards=15 run=null
+[p4] shot sanctuary_low
+[p4] menu btns=["New Run", "Sanctuary", "Settings"]
+DRIVE DONE p4

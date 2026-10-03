@@ -14,6 +14,9 @@ var _entering := false
 
 
 func _ready() -> void:
+	if RunState.run == null and not RunState.has_saved_run():
+		SceneRouter.goto("main_menu")
+		return
 	RunState.ensure_run()
 	run = RunState.run
 	if run.result != "":
@@ -68,6 +71,10 @@ func _ready() -> void:
 	top_bar.refresh(run)
 	top_bar.deck_pressed.connect(_on_deck_pressed)
 
+	PauseOverlay.make_button(self, Vector2(970, 128)).pressed.connect(_open_pause)
+	get_tree().set_quit_on_go_back(false)
+	AudioManager.play_music("ambient_menu")
+
 	deck_overlay = DeckOverlay.new()
 	add_child(deck_overlay)
 	deck_overlay.hide()
@@ -77,6 +84,16 @@ func _ready() -> void:
 		target_layer = int(run.node(run.current_node)["layer"])
 	var ty := content_h - 200 - target_layer * LAYER_H
 	_scroll_to.call_deferred(ty - int(VIEW_H * 0.7))
+
+
+func _open_pause() -> void:
+	if not get_tree().paused:
+		PauseOverlay.open(self)
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_open_pause()
 
 
 func _scroll_to(v: int) -> void:

@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="CardFight"
-run/main_scene="res://scenes/map/map_screen.tscn"
+run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://scripts/autoload/game_data.gd"
+SaveManager="*res://scripts/autoload/save_manager.gd"
+MetaState="*res://scripts/autoload/meta_state.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
 RunState="*res://scripts/autoload/run_state.gd"
 SceneRouter="*res://scripts/autoload/scene_router.gd"
 

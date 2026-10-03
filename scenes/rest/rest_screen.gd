@@ -74,6 +74,7 @@ func _ready() -> void:
 	overlay.hide()
 
 	top_bar.refresh(run)
+	AudioManager.play("campfire")
 
 
 func _big_button(text: String, y: float) -> Button:
@@ -88,6 +89,7 @@ func _big_button(text: String, y: float) -> Button:
 
 func _finish(text: String) -> void:
 	_done = true
+	RunState.mark_dirty()
 	_rest_btn.visible = false
 	_upgrade_btn.visible = false
 	_msg.text = text

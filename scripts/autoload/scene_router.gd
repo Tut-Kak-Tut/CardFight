@@ -2,7 +2,10 @@ extends Node
 
 const SCENES := {"map": "res://scenes/map/map_screen.tscn", "combat": "res://scenes/combat/combat_screen.tscn",
 	"rewards": "res://scenes/rewards/rewards_screen.tscn", "merchant": "res://scenes/merchant/merchant_screen.tscn",
-	"rest": "res://scenes/rest/rest_screen.tscn", "run_result": "res://scenes/run_result/run_result_screen.tscn"}
+	"rest": "res://scenes/rest/rest_screen.tscn", "run_result": "res://scenes/run_result/run_result_screen.tscn",
+	"main_menu": "res://scenes/main_menu/main_menu.tscn",
+	"character_select": "res://scenes/character_select/character_select.tscn",
+	"sanctuary": "res://scenes/sanctuary/sanctuary.tscn"}
 
 var _layer: CanvasLayer
 var _fade: ColorRect

@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.341 - Forward Mobile - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3050 Laptop GPU
+
+[r3] TR @TextureRect@9 bg_menu.svg vis=true rect=[P: (0.0, 0.0), S: (1080.0, 1920.0)] mod=(1.0, 1.0, 1.0, 1.0)
+[r3] TR @TextureRect@10 logo.svg vis=true rect=[P: (0.0, 250.0), S: (1080.0, 300.0)] mod=(1.0, 1.0, 1.0, 1.0)
+[r3] TR @TextureRect@11 icon_shard.svg vis=true rect=[P: (400.0, 600.0), S: (60.0, 60.0)] mod=(1.0, 1.0, 1.0, 1.0)
+[r3] shot settings_sound_off
+[r3] shot settings_both_off
+[r3] btns ["Continue", "New Run", "Sanctuary", "Settings", "Sound: ON", "Vibration: ON", "Back"]
+DRIVE DONE r3

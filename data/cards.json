@@ -375,20 +375,20 @@
       "cost": 1,
       "target": "enemy",
       "exhaust": false,
-      "text": "Deal 6 damage.",
+      "text": "Deal 7 damage.",
       "effects": [
         {
           "op": "damage",
-          "value": 6,
+          "value": 7,
           "target": "enemy"
         }
       ],
       "upgraded": {
-        "text": "Deal 9 damage.",
+        "text": "Deal 10 damage.",
         "effects": [
           {
             "op": "damage",
-            "value": 9,
+            "value": 10,
             "target": "enemy"
           }
         ]
@@ -431,22 +431,22 @@
       "cost": 1,
       "target": "enemy",
       "exhaust": false,
-      "text": "Apply 4 Poison.",
+      "text": "Apply 5 Poison.",
       "effects": [
         {
           "op": "apply",
           "status": "poison",
-          "value": 4,
+          "value": 5,
           "target": "enemy"
         }
       ],
       "upgraded": {
-        "text": "Apply 7 Poison.",
+        "text": "Apply 8 Poison.",
         "effects": [
           {
             "op": "apply",
             "status": "poison",
-            "value": 7,
+            "value": 8,
             "target": "enemy"
           }
         ]
