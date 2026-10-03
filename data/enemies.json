@@ -313,7 +313,7 @@
     {
       "id": "lich_lord",
       "name": "Lich Lord",
-      "max_hp": 128,
+      "max_hp": 140,
       "tier": "boss",
       "phases": [
         {
@@ -334,7 +334,7 @@
                 {
                   "op": "apply",
                   "status": "poison",
-                  "value": 3,
+                  "value": 4,
                   "target": "player"
                 }
               ]

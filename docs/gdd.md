@@ -165,7 +165,7 @@ Neutral (6; доступні обом):
 | Dark Cultist | 26 | Buff: +4 Strength to self → Attack 6 → Attack 6 |
 | Wraith | 28 | Defend 10 → Attack 12 → Attack 6 |
 | Bone Golem (Elite) | 92 | Attack 16 → Defend 15 → Attack 10 + 1 Weak → Buff: +3 Strength |
-| Lich Lord (Boss) | 128 | Phase 1 (HP > 50%): Attack 12 → Debuff: 3 Poison on player → Defend 14 + Attack 6. Phase 2 (HP <= 50%, миттєво раз): +3 Strength, далі Attack 16 → Attack 8 x2 → Debuff: 2 Vulnerable on player |
+| Lich Lord (Boss) | 140 | Phase 1 (HP > 50%): Attack 12 → Debuff: 4 Poison on player → Defend 14 + Attack 6. Phase 2 (HP <= 50%, миттєво раз): +3 Strength, далі Attack 16 → Attack 8 x2 → Debuff: 2 Vulnerable on player |
 
 Склад боїв: шари 1-3 — 1-2 слабких ворогів (Skeleton Warrior, Skeleton Archer, Dark Cultist); шари 4-9 — 2-3 ворога з усього пулу (3-ворожий склад один: Bone Minion + Dark Cultist + Skeleton Archer; важкі 3-ворожі зі Skeleton Warrior прибрано, див. balance-2026-10-03); Elite — Bone Golem сам; Boss — Lich Lord сам.
 
