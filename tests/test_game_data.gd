@@ -9,7 +9,13 @@ func test_counts() -> void:
 	var gd = _gd()
 	assert_eq(gd.cards.size(), 30)
 	assert_eq(gd.characters.size(), 2)
-	assert_eq(gd.enemies.size(), 7)
+	assert_true(gd.enemies.size() >= 8)
+	for pool in gd.encounters.values():
+		if not pool is Array:
+			continue
+		for enc in pool:
+			for id in enc:
+				assert_true(gd.enemies.has(id), "unknown enemy " + str(id))
 	assert_eq(gd.relics.size(), 6)
 	gd.free()
 

@@ -13,7 +13,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 7,
+                  "value": 8,
                   "target": "player"
                 }
               ]
@@ -23,7 +23,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 7,
+                  "value": 8,
                   "target": "player"
                 }
               ]
@@ -54,7 +54,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 6,
+                  "value": 7,
                   "target": "player"
                 }
               ]
@@ -64,7 +64,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 10,
+                  "value": 11,
                   "target": "player"
                 }
               ]
@@ -77,6 +77,47 @@
                   "status": "weak",
                   "value": 1,
                   "target": "player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bone_minion",
+      "name": "Bone Minion",
+      "max_hp": 10,
+      "tier": "normal",
+      "phases": [
+        {
+          "pattern": [
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 4,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "attack",
+              "effects": [
+                {
+                  "op": "damage",
+                  "value": 4,
+                  "target": "player"
+                }
+              ]
+            },
+            {
+              "intent": "defend",
+              "effects": [
+                {
+                  "op": "block",
+                  "value": 4
                 }
               ]
             }
@@ -151,7 +192,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 5,
+                  "value": 6,
                   "target": "player"
                 }
               ]
@@ -161,7 +202,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 5,
+                  "value": 6,
                   "target": "player"
                 }
               ]

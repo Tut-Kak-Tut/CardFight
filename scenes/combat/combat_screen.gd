@@ -153,9 +153,9 @@ func _build_ui() -> void:
 	energy_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	circle.add_child(energy_label)
 
-	draw_label = _label("", 24, Vector2(180, 1290), Vector2(200, 40))
+	draw_label = _label("", 28, Vector2(40, 1190), Vector2(300, 44))
 	add_child(draw_label)
-	discard_label = _label("", 24, Vector2(840, 1360), Vector2(220, 40))
+	discard_label = _label("", 28, Vector2(740, 1190), Vector2(300, 44))
 	discard_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	add_child(discard_label)
 
@@ -295,13 +295,13 @@ func _rebuild_hand() -> void:
 
 func _layout_hand() -> void:
 	var n := card_views.size()
-	var dx: float = minf(170.0, 900.0 / maxf(n, 1))
+	var dx: float = minf(240.0 * 0.9 + 6.0, 1040.0 / maxf(n, 1))
 	var half := (n - 1) / 2.0
 	for i in n:
 		var v := card_views[i]
 		var off := i - half
 		v.z_index = 0
-		v.rotation_degrees = off * 4.0
+		v.rotation_degrees = off * 2.0
 		var edge := absf(off) / maxf(half, 1.0)
 		var y := HAND_BOTTOM_Y + 10.0 * edge
 		if int(v.card.uid) == selected_uid:

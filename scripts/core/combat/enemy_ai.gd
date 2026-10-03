@@ -48,4 +48,9 @@ static func preview(e: Combatant, state: CombatState) -> Dictionary:
 					times = int(fx.get("times", 1))
 			"block":
 				block += int(fx.get("value", 0))
+			"apply":
+				if fx.get("target", "") == "self":
+					buff += int(fx.get("value", 0))
+				elif fx.get("target", "") == "player" and debuff == 0:
+					debuff = int(fx.get("value", 0))
 	return {"intent": e.intent.get("intent", ""), "damage": dmg, "times": times, "block": block, "buff": buff, "debuff": debuff}

@@ -82,6 +82,18 @@ func test_preview_strength() -> void:
 	assert_eq(EnemyAI.preview(e, s).damage, floori((base + st) * float(_data().balance.vulnerable_mult)))
 	_done()
 
+func test_preview_buff_debuff() -> void:
+	var s := _fight(["dark_cultist"])
+	assert_eq(EnemyAI.preview(s.enemies[0], s).buff, int(_fx("dark_cultist", 0, 0).value))
+	var a := _fight(["skeleton_archer"])
+	var e := a.enemies[0]
+	var best := 0
+	for i in e.data.phases[0].pattern.size():
+		best = maxi(best, int(EnemyAI.preview(e, a).debuff))
+		EnemyAI.advance(e)
+	assert_true(best > 0)
+	_done()
+
 func test_weak_reduces() -> void:
 	var s := _fight(["skeleton_warrior"])
 	s.enemies[0].add_status("weak", 2)
