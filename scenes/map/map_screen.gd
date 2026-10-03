@@ -85,7 +85,7 @@ func _scroll_to(v: int) -> void:
 
 func _add_node(parent: Control, n: Dictionary, p: Vector2, avail: Array[int]) -> void:
 	var id := int(n["id"])
-	var s := 160.0 if n["type"] == "boss" else 120.0
+	var s := 180.0 if n["type"] == "boss" else 140.0
 	var b := TextureButton.new()
 	b.texture_normal = load(ART + "node_%s.svg" % n["type"])
 	b.ignore_texture_size = true

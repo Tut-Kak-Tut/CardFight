@@ -15,7 +15,7 @@ var take_btn: Button
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	RunState.ensure_run()
 	_build()
 

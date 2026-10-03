@@ -265,7 +265,7 @@
               "effects": [
                 {
                   "op": "damage",
-                  "value": 14,
+                  "value": 16,
                   "target": "player"
                 }
               ]
@@ -313,7 +313,7 @@
     {
       "id": "lich_lord",
       "name": "Lich Lord",
-      "max_hp": 140,
+      "max_hp": 128,
       "tier": "boss",
       "phases": [
         {
@@ -334,7 +334,7 @@
                 {
                   "op": "apply",
                   "status": "poison",
-                  "value": 4,
+                  "value": 3,
                   "target": "player"
                 }
               ]

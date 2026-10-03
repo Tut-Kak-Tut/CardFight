@@ -12,6 +12,9 @@ var _busy := false
 
 
 func _ready() -> void:
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	if RunState.run == null:
+		RunState.ensure_run()
 	run = RunState.run
 	var bg := TextureRect.new()
 	bg.texture = load(ART + "bg_merchant.svg")
@@ -155,7 +158,7 @@ func _refresh() -> void:
 		shop.get("remove_used", false) or run.gold < rm_price or not run.can_remove())
 	rm.pressed.connect(_on_remove)
 	var hl := _service_button("Heal +%d%% — %d" % [heal_pct, heal_price], Vector2(550, 1520),
-		shop.get("heal_used", false) or run.gold < heal_price)
+		shop.get("heal_used", false) or run.gold < heal_price or run.hp >= run.max_hp)
 	hl.pressed.connect(_on_heal)
 
 

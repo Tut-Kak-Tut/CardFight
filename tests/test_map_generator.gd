@@ -18,6 +18,23 @@ func test_500_seeds_valid() -> void:
 			break
 	assert_eq(bad, -1, "first invalid seed")
 
+func test_merchant_max() -> void:
+	var cfg := _cfg()
+	cfg["merchant_max"] = 3
+	var bad := -1
+	for s in range(500):
+		var rng := RandomNumberGenerator.new()
+		rng.seed = s
+		var m := MapGenerator.generate(cfg, rng)
+		var cnt := 0
+		for n in m["nodes"]:
+			if n["type"] == "merchant":
+				cnt += 1
+		if cnt > 3 or not MapGenerator.validate(m, cfg).is_empty():
+			bad = s
+			break
+	assert_eq(bad, -1, "first bad seed")
+
 func test_deterministic() -> void:
 	assert_true(_gen(42) == _gen(42), "same seed same map")
 

@@ -30,4 +30,4 @@ func _draw() -> void:
 				col = COL_AVAIL
 			draw_line(positions[a], positions[b], col, 6.0)
 	if run.current_node != -1:
-		draw_arc(positions[run.current_node], 75.0, 0.0, TAU, 48, COL_AVAIL, 5.0)
+		draw_arc(positions[run.current_node], 85.0, 0.0, TAU, 48, COL_AVAIL, 5.0)

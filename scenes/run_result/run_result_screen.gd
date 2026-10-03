@@ -5,8 +5,11 @@ const GOLD := Color("#c9a24b")
 
 
 func _ready() -> void:
-	set_anchors_preset(Control.PRESET_FULL_RECT)
-	RunState.ensure_run()
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	if RunState.run == null:
+		RunState.new_run()
+		SceneRouter.goto("map")
+		return
 	var run: Run = RunState.run
 	var bg := TextureRect.new()
 	bg.texture = load(ART + "bg_combat.svg")
@@ -28,13 +31,13 @@ func _ready() -> void:
 	if run.stats.boss:
 		lines.append("Boss defeated")
 	for i in lines.size():
-		_label(lines[i], 32, 600 + i * 60, 50, Color.WHITE)
-	_label("Soul Shards earned: %d" % run.soul_shards(), 40, 1000, 60, GOLD)
+		_label(lines[i], 32, 650 + i * 60, 50, Color.WHITE)
+	_label("Soul Shards earned: %d" % run.soul_shards(), 40, 1150, 60, GOLD)
 
 	var b := Button.new()
 	b.text = "Continue"
 	b.add_theme_font_size_override("font_size", 44)
-	b.position = Vector2(340, 1600)
+	b.position = Vector2(340, 1450)
 	b.size = Vector2(400, 120)
 	b.pressed.connect(_on_continue)
 	add_child(b)

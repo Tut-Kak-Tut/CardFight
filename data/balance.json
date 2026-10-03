@@ -8,12 +8,12 @@
   "start_gold": 50,
   "skip_reward_gold": 10,
   "gold_battle": [
-    10,
-    20
+    12,
+    22
   ],
   "gold_elite": [
-    25,
-    35
+    30,
+    40
   ],
   "reward_card_choices": 3,
   "rarity_weights": {
@@ -51,7 +51,7 @@
     "heal_pct": 20,
     "heal_price": 60
   },
-  "rest_heal_pct": 30,
+  "rest_heal_pct": 35,
   "shards": {
     "per_layer": 5,
     "elite": 15,
@@ -64,8 +64,8 @@
     "max_nodes": 3,
     "first_layer_nodes": 2,
     "weights": {
-      "battle": 50,
-      "rest": 18,
+      "battle": 46,
+      "rest": 22,
       "merchant": 15,
       "elite": 12
     },
@@ -78,14 +78,15 @@
       2
     ],
     "merchant_min": 2,
+    "merchant_max": 3,
     "merchant_required_layer": 8,
     "rest_layers": [
       3,
       9
     ],
     "rest_count": [
-      3,
-      4
+      4,
+      5
     ],
     "rest_required_layer": 9
   }

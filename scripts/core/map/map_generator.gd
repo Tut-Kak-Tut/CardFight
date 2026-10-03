@@ -164,6 +164,8 @@ static func _assign_types(map: Dictionary, cfg: Dictionary, rng: RandomNumberGen
 					continue
 				if k == "rest" and used["rest"] >= int(cfg["rest_count"][1]):
 					continue
+				if k == "merchant" and used["merchant"] >= int(cfg.get("merchant_max", 99)):
+					continue
 				kk.append(k)
 				tt += float(w[k])
 			var r := rng.randf() * tt
@@ -208,6 +210,10 @@ static func _check_types(map: Dictionary, cfg: Dictionary, fast := false) -> Arr
 	var rc: Array = cfg["rest_count"]
 	if counts["elite"] < int(ec[0]) or counts["elite"] > int(ec[1]):
 		errs.append("elite count %d" % counts["elite"])
+		if fast:
+			return errs
+	if counts["merchant"] > int(cfg.get("merchant_max", 99)):
+		errs.append("merchant count %d > max" % counts["merchant"])
 		if fast:
 			return errs
 	if counts["merchant"] < int(cfg["merchant_min"]):

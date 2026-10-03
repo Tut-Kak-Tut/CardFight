@@ -20,22 +20,22 @@ func _init() -> void:
 
 func _ready() -> void:
 	var bg := ColorRect.new()
-	bg.color = Color(0, 0, 0, 0.85)
+	bg.color = Color(0, 0, 0, 0.92)
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(bg)
 
 	_title = Label.new()
 	_title.add_theme_font_size_override("font_size", 40)
-	_title.position = Vector2(0, 60)
+	_title.position = Vector2(0, 150)
 	_title.size = Vector2(1080, 60)
 	_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_title)
 
 	_scroll = ScrollContainer.new()
-	_scroll.position = Vector2(0, 140)
-	_scroll.size = Vector2(1080, 1560)
+	_scroll.position = Vector2(0, 220)
+	_scroll.size = Vector2(1080, 1490)
 	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	add_child(_scroll)
 
@@ -54,6 +54,7 @@ func _ready() -> void:
 	_close.add_theme_font_size_override("font_size", 36)
 	_close.size = Vector2(300, 110)
 	_close.position = Vector2(390, 1760)
+	_close.z_index = 1
 	_close.pressed.connect(_on_close)
 	add_child(_close)
 
@@ -88,7 +89,9 @@ func open(cards: Array, title: String, pick_mode := false, allowed: Array = []) 
 		else:
 			# перегляд: картки не перехоплюють події, скрол працює
 			cv.mouse_filter = Control.MOUSE_FILTER_PASS
+	z_index = 50
 	show()
+	move_to_front()
 
 
 func _on_card_tapped(view) -> void:

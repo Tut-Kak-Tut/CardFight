@@ -285,7 +285,7 @@ func refresh() -> void:
 	banner.visible = state.pending_discard > 0
 	if state.result != "":
 		result_label.text = "Victory" if state.result == "win" else "Defeat"
-		rb.text = "Continue" if state.result == "win" else "Restart"
+		rb.text = "Continue" if (state.result == "win" or in_run) else "Restart"
 		result_overlay.visible = true
 
 
