@@ -40,6 +40,8 @@ static func resolve(effects: Array, source: Combatant, target: Combatant, state:
 						state.event.emit("damage", {"target": t, "amount": amount, "blocked": mini(before_block, amount)})
 						if t.is_dead():
 							state.event.emit("death", {"target": t})
+					if not t.is_player and EnemyAI.check_phase(t, state):
+						state.event.emit("phase", {"target": t})
 			"block":
 				source.add_block(value)
 				state.event.emit("block", {"target": source, "amount": value})

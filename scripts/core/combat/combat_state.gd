@@ -120,8 +120,23 @@ func end_player_turn() -> void:
 	_end_of_turn_statuses(player)
 	_enemy_phase()
 
+func start_combat() -> void:
+	start_player_turn()
+
 func _enemy_phase() -> void:
-	pass # T-005
+	for e in enemies:
+		if e.is_dead() or result != "":
+			continue
+		if e.get_status("bastion") <= 0:
+			e.block = 0
+		_tick_poison(e)
+		if not e.is_dead():
+			EffectResolver.resolve(e.intent.get("effects", []), e, player, self)
+		_end_of_turn_statuses(e)
+		EnemyAI.advance(e)
+		_check_end()
+	if result == "":
+		start_player_turn()
 
 func _end_of_turn_statuses(c: Combatant) -> void:
 	c.add_status("vulnerable", -1)

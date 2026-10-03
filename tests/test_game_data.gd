@@ -11,10 +11,13 @@ func test_counts() -> void:
 	assert_eq(gd.characters.size(), 2)
 	assert_eq(gd.enemies.size(), 7)
 	assert_eq(gd.relics.size(), 6)
+	gd.free()
 
 func test_validate_clean() -> void:
-	var errs = _gd().validate()
+	var gd = _gd()
+	var errs = gd.validate()
 	assert_true(errs.is_empty(), "\n".join(errs))
+	gd.free()
 
 func test_upgrade() -> void:
 	var gd = _gd()
@@ -23,11 +26,15 @@ func test_upgrade() -> void:
 	assert_eq(c.effects[0].value, 9)
 	assert_eq(c.upgraded, true)
 	assert_eq(gd.get_card("bastion", true).cost, 1)
+	gd.free()
 
 func test_ints() -> void:
-	assert_eq(typeof(_gd().get_card("strike").cost), TYPE_INT)
+	var gd = _gd()
+	assert_eq(typeof(gd.get_card("strike").cost), TYPE_INT)
+	gd.free()
 
 func test_validate_catches() -> void:
 	var gd = _gd()
 	gd.cards["strike"].effects[0].op = "bogus"
 	assert_true(not gd.validate().is_empty())
+	gd.free()
