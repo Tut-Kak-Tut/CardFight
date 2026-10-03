@@ -13,6 +13,7 @@ config_version=5
 
 config/name="CardFight"
 config/features=PackedStringArray("4.7", "Mobile")
+run/main_scene="res://scenes/combat/combat_screen.tscn"
 config/icon="res://icon.svg"
 
 [autoload]
